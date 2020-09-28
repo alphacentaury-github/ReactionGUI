@@ -1,0 +1,9 @@
+
+Reference Number = 6200 Incident Particle: deuteron
+Target: Z=  6 A=  12 Number of energies=   1
+Type potential: spherical    non-dispersive               non-relativistic
+First Author: Haixia        
+Z-Range= 6- 92  A-Range= 12-238  E-Range=   1.000- 200.000 MeV         Ef =-17.730
+
+En(MeV)     V    RV    AV    DWV      W    RW    AW     VD   RVD   AVD     WD   RWD   AWD    VSO   RVSO  AVSO   WSO   RWSO  AWSO   VHFpn WSpn DVSpn    WVpn    DVVpn   V(Lane)  W(Lane)    E
+ 10.000 91.054 1.149 0.748  0.000  1.726 1.349 0.626  0.000 0.000 0.000 10.524 1.400 0.673  3.557 0.972 1.011  0.000 0.000 0.000
