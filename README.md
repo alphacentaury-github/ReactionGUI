@@ -23,7 +23,7 @@ Recommend to install Anaconda( https://www.anaconda.com/products/individual ) fo
    )
    
 ## Usage
-There is a two-way to run the code 
+There are two ways to run the code 
 
 1. type 'python main.py' in the terminal.( within python environment) 
 2. modify 'main.bat' file for the correct path and run batch file. 
