@@ -1,7 +1,7 @@
 # ReactionGUI
 GUI for easy and intuitive reaction calculation
 
-##Requirements
+## Requirements
 Recommend to install Anaconda for python environment 
 
 1. Python 3.x 
