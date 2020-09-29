@@ -2,7 +2,7 @@
 GUI for easy and intuitive reaction calculation
 
 ## Requirements
-Recommend to install Anaconda for python environment 
+Recommend to install Anaconda( https://www.anaconda.com/products/individual ) for python environment 
 
 1. Python 3.x 
 2. PyQt5 ( install with command "pip install pyqt5")
