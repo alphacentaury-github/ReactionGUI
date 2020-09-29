@@ -22,5 +22,9 @@ Recommend to install Anaconda( https://www.anaconda.com/products/individual ) fo
     Or Download from https://www-nds.iaea.org/RIPL-3/ ( in the MASSES tab)
    )
    
-   
+## Usage
+There is a two-way to run the code 
+
+1. type 'python main.py' in the terminal.( within python environment) 
+2. modify 'main.bat' file for the correct path and run batch file. 
     
