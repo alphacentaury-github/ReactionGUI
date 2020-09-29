@@ -1,1 +1,1 @@
-cmd /c C:\Users\user\anaconda3\condabin\conda.bat run "C:\Users\user\anaconda3\python.exe" "C:\Users\user\Documents\GitHub\GUI\test_cython_omp_dialog\dist\main.py"
+cmd /c C:\Users\user\anaconda3\condabin\conda.bat run "C:\Users\user\anaconda3\python.exe" "C:\Users\user\Documents\GitHub\GUI\main.py"
