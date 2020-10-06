@@ -45,7 +45,7 @@ def global_omp_choose(ap,zp,at,zt,elab):
     # [60:63] Ref.No.     [65:80] 1st Author
     ff = open(ompIndexFile,'r')
     lines = ff.readlines()
-    lines = list(map(lambda s: s.strip(), lines))
+    lines = list(map(lambda s: s.rstrip(), lines))
     omp_list=[]
     for line in lines:
         if line[6:9] == name_Targ :
