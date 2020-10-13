@@ -4,11 +4,12 @@ GUI for easy and intuitive reaction calculation
 ## Requirements
 Recommend to install Anaconda( https://www.anaconda.com/products/individual ) for python environment 
 
-1. Python 3.x 
+1. Python 3.8 (The code is compiled with cpython 3.8. Thus, there may be a problem with lower version of python.)  
 2. PyQt5 ( install with command "pip install pyqt5")
 3. matplotlib ( install with command "pip install matplotlib")
 4. numpy ( install with command "pip install numpy")
 5. scipy ( install with command "pip install scipy")
+---followings are included and thus no separate install/download is not necessary. ---
 6. executable file of FRESCO and SFRESCO. 
   ( precompiled executable files are included.  
     Or Download/Compile from http://www.fresco.org.uk/ 
