@@ -29,3 +29,12 @@ There are two ways to run the code
 1. type 'python main.py' in the terminal.( within python environment) 
 2. modify 'main.bat' file for the correct path and run batch file. 
 3. For OSX and linux : set the executable file path using the 'Configure' menu.     
+
+## Known Errors
+1. Symptom : DLL load failed while importing xxx 
+   Solution: update anaconda(or python packages) to newest version 
+2. Symptom : No experimental data for fitting
+   Solution : One have to click "exp data" button before fitting. 
+   
+   
+   
