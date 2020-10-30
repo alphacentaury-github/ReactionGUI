@@ -32,8 +32,10 @@ There are two ways to run the code
 
 ## Known Errors
 1. Symptom : DLL load failed while importing xxx 
+
    Solution: update anaconda(or python packages) to newest version 
 2. Symptom : No experimental data for fitting
+
    Solution : One have to click "exp data" button before fitting. 
    
    
