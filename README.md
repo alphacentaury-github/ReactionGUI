@@ -44,6 +44,8 @@ There are two ways to run the code
 1. type 'python main.py' in the (anaconda) terminal. 
 2. modify 'main.bat' file for the correct path and run batch file in Windows. 
 
+Input examples are available in example folder. (Use 'Open' in the menu.) 
+
 ## Limitation
 ReactionGUI can compute (with a interface to Fresco )
 
