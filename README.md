@@ -18,7 +18,7 @@ Written by Y.-H. Song(yhsong@ibs.re.kr), I.J. Shin(geniean@ibs.re.kr)
 ## Requirements
 Recommend to install Anaconda( https://www.anaconda.com/products/individual ) for python environment 
 
-1. Python 3.8 (The code is compiled with cpython 3.8. Thus, there may be a problem with lower version of python.)  
+1. Python 3.8 or higher
 2. PyQt5 ( install with command "pip install pyqt5")
 3. matplotlib ( install with command "pip install matplotlib")
 4. numpy ( install with command "pip install numpy")
