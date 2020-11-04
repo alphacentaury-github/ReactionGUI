@@ -5,7 +5,7 @@ Written by Y.-H. Song(yhsong@ibs.re.kr), I.J. Shin(geniean@ibs.re.kr)
 
 Last modified 2020-11-04
 
-## Disclamer 
+## Notice 
     Copyright (c) 2020, All rights reserved.
     
     ReactionGUI is free software: you can redistribute it and/or modify it
