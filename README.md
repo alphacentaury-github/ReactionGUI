@@ -45,7 +45,7 @@ There are two ways to run the code
 2. modify 'main.bat' file for the correct path and run batch file in Windows. 
 
 ## Limitation
-ReactionGUI can compute
+ReactionGUI can compute (with a interface to Fresco )
 
 1. elasctic scattering using optical potential 
 2. inelastic scattering using Distorted Wave Born Approximation in rotor model
