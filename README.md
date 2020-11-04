@@ -25,7 +25,9 @@ Recommend to install Anaconda( https://www.anaconda.com/products/individual ) fo
 3. matplotlib ( install with command "pip install matplotlib")
 4. numpy ( install with command "pip install numpy")
 5. scipy ( install with command "pip install scipy")
+
 ---followings are included and thus no separate install/download is not necessary. ---
+
 6. executable file of FRESCO and SFRESCO. 
   ( from http://www.fresco.org.uk/ ) 
 7. executable file of OMGET and required data files. 
