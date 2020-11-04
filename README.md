@@ -17,6 +17,7 @@ Last modified 2020-11-04
     WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
     GNU General Public License for more details.
+    
 ## Requirements
 Recommend to install Anaconda( https://www.anaconda.com/products/individual ) for python environment 
 
@@ -43,6 +44,15 @@ There are two ways to run the code
 1. type 'python main.py' in the (anaconda) terminal. 
 2. modify 'main.bat' file for the correct path and run batch file in Windows. 
 
+## Limitation
+ReactionGUI can compute
+
+1. elasctic scattering using optical potential 
+2. inelastic scattering using Distorted Wave Born Approximation in rotor model
+3. transfer reaction using Distorted Wave Born Approximation in cluster model
+
+Capability of doing coupled cluster calculation, CDCC, radiative capture, fusion reaction
+are planned but not yet included. 
 
 ## Known Errors
 1. Symptom : DLL load failed while importing xxx 
