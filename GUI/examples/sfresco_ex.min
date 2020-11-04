@@ -1,7 +1,0 @@
-sfresco_ex.search
-q
-plot sfresco_ex-init.plot
-min
-migrad
-end
-plot sfresco_ex-fit.plot
