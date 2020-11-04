@@ -1,8 +1,0 @@
-'_test.search' 
-q
-plot _test_init.plot
-min
-migrad 
-end
-plot _test_fit.plot
-ex
