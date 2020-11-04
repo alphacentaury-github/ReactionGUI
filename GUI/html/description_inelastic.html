@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<script type="text/javascript"
+				src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	</head>
+    <body>
+		<h2> Rotor model </h2>
+		<p> In the rotor model, the excitation is considered as a rotation of a deformed nuclei.
+		Briefly deformed potetial can be described as 
+<!--		\[ V(R,\xi) = U(R) - U^\prime(R)\sum_\lambda \delta_\lambda \frac{\sqrt{4\pi}}{\hat{\lambda}} \sum_m Y^m_\lambda(\hat{\xi}) Y^m_\lambda(\hat{R})^*\] -->
+		\[ U_\textrm{inelastic}(r) = \delta~\frac{d U(r)}{dr} \]
+		where \( U(r) \) can be \( V_\textrm{coul}(r), U_\textrm{vol}(r) \) or \( U_\textrm{surf}(r) \). <br>
+		For Coulomb deformation, the matrix elements for the transition from nuclear spin \(I_i\) to \(I_f\) are asymptotically 
+<!--		\[  V^\lambda_{fi} \sim \frac{\sqrt{4\pi} e^2 Z_t}{2\lambda+1} \frac{1}{R^{\lambda+1}} \frac{3Z_p \delta_\lambda R_c^{\lambda-1}}{4\pi} I_i\langle I_iK,\lambda 0|I_f K\rangle \] -->
+		\[  V^\lambda_{fi}(R) \sim \frac{~~3 e^2}{\sqrt{4\pi}} \frac{Z_p Z_t}{2\lambda+1} \frac{R_c^{\lambda-1}}{R^{\lambda+1}} \delta_\lambda~\hat{I_i}\langle I_i K,\lambda 0|I_f K\rangle \]
+		and for nuclear deformation those are
+		\[ V^\lambda_{fi}(R) = -\frac{\delta_\lambda}{\sqrt{4\pi}}~U^\prime(R)~\hat{I_i}\langle I_i K,\lambda 0|I_f K\rangle~~.\] </p>
+		<p>	In principle, the transferred angular momentum \(\delta_L\) is determined by the ground and excited state given at [Partition tab].
+		We will provide a guide for available \(\Delta L\).
+		Here your input parameter is \(\beta_L\) which is related to the deforamtion length \(\delta_L\) and the average surface radius \(R_0\) : \(\beta_L = \delta_L / R_0\)
+		where we take \(R_0 = 1.2~A^{1/3}\). </p>
+
+		<h2> Cluster model</h2>
+		<p> The cluster model treats a nucleus as a combination of two or more sub-nuclei.
+		In inelastic scattering the excitation is modeled as a change of single-particle energy level in a cluster.
+		In this case transition potential for multiple component \(\lambda\) is
+		\[ V^\lambda_{fi}(R) = \int_0^\infty \textrm{d}r~u_{l_f s j_f}(r)\mathcal{F}_\lambda(R,r) u_{l_i s j_i}(r)~\hat{\lambda}~\hat{l_i}~\langle l_i0,\lambda0|l_f0 \rangle ~~.\]	
+		<p> One have to specify the core and valence particle and the change of valence particle level.
+		For the convenience, available \(L\) and \(j\) will be suggested according to each state.
+		Also principal quantum number \(n\) should be required.
+		Especially in case the valence is a single nucleon (proton or neutron), \(n\) is easily assumed in viwepoint of the shell model.
+		The bindig energies (BE) are calculated automatically, but you can put the values directly if you want. </p>
+	</body>
+</html>

@@ -1,0 +1,3333 @@
+
+ &POT KP = 1, TYPE = 0, ITT = F, NOSUB = F, SHAPE = 0, DEF = 9*0., 
+ MNEP = 9*0., MNET = 9*0., AP = 0., AT = 112., RC = 1.233, 
+ AC = 0., P = 9*0., P0 = 0., P1 = 0., P2 = 0., P3 = 0., 
+ P4 = 0., P5 = 0., P6 = 0., P7 = 0., V = 0., R0 = 0., RV = 0., 
+ VR0 = 0., A = 0., AV = 0., W = 0., WR0 = 0., RW = 0., AW = 0., 
+ WA = 0., R0W = 0., VSO = 0., RSO = 0., RSO0 = 0., ASO = 0., 
+ VSOI = 0., RSOI = 0., ASOI = 0., WD = 0., WDR = 0., WDA = 0., 
+ WDR0 = 0., AWD = 0., DEFP = 9*0., DEFT = 9*0., VD = 0., 
+ VDR = 0., VDA = 0., LSHAPE = 0, JL = ' ', XLVARY = 0., 
+ ALVARY = 0., CITT = ' ', 
+ /
+ loop = 0  is type = 0 0. 112. 0. 1.233 0. 0. 0. 0. 0.
+
+ &POT KP = 1, TYPE = 1, ITT = F, NOSUB = F, SHAPE = 0, DEF = 0., 
+ 53.621, 1.22, 0.661, 1.552, 1.22, 0.661, 2*0., MNEP = 9*0., 
+ MNET = 9*0., AP = 0., AT = 0., RC = 0., AC = 0., P = 0., 
+ 53.621, 1.22, 0.661, 1.552, 1.22, 0.661, 2*0., P0 = 0., 
+ P1 = 53.621, P2 = 1.22, P3 = 0.661, P4 = 1.552, P5 = 1.22, 
+ P6 = 0.661, P7 = 0., V = 0., R0 = 0., RV = 0., VR0 = 0., 
+ A = 0., AV = 0., W = 0., WR0 = 0., RW = 0., AW = 0., WA = 0., 
+ R0W = 0., VSO = 0., RSO = 0., RSO0 = 0., ASO = 0., VSOI = 0., 
+ RSOI = 0., ASOI = 0., WD = 0., WDR = 0., WDA = 0., WDR0 = 0., 
+ AWD = 0., DEFP = 9*0., DEFT = 9*0., VD = 0., VDR = 0., 
+ VDA = 0., LSHAPE = 0, JL = ' ', XLVARY = 0., ALVARY = 0., 
+ CITT = ' ', 
+ /
+ loop = -1  is type = 1 0. 53.621 1.22 0.661 1.552 1.22 0.661 0. 0.
+
+ &POT KP = 1, TYPE = 2, ITT = F, NOSUB = F, SHAPE = 0, DEF = 4*0., 
+ 8.571, 1.266, 0.577, 2*0., MNEP = 9*0., MNET = 9*0., AP = 0., 
+ AT = 0., RC = 0., AC = 0., P = 4*0., 8.571, 1.266, 0.577, 
+ 2*0., P0 = 0., P1 = 0., P2 = 0., P3 = 0., P4 = 8.571, P5 = 1.266, 
+ P6 = 0.577, P7 = 0., V = 0., R0 = 0., RV = 0., VR0 = 0., 
+ A = 0., AV = 0., W = 0., WR0 = 0., RW = 0., AW = 0., WA = 0., 
+ R0W = 0., VSO = 0., RSO = 0., RSO0 = 0., ASO = 0., VSOI = 0., 
+ RSOI = 0., ASOI = 0., WD = 0., WDR = 0., WDA = 0., WDR0 = 0., 
+ AWD = 0., DEFP = 9*0., DEFT = 9*0., VD = 0., VDR = 0., 
+ VDA = 0., LSHAPE = 0, JL = ' ', XLVARY = 0., ALVARY = 0., 
+ CITT = ' ', 
+ /
+ loop = -1  is type = 2 0. 0. 0. 0. 8.571 1.266 0.577 0. 0.
+
+ &POT KP = 1, TYPE = 3, ITT = F, NOSUB = F, SHAPE = 0, DEF = 0., 
+ 5.611, 1.051, 0.59, -0.087, 1.051, 0.59, 2*0., MNEP = 9*0., 
+ MNET = 9*0., AP = 0., AT = 0., RC = 0., AC = 0., P = 0., 
+ 5.611, 1.051, 0.59, -0.087, 1.051, 0.59, 2*0., P0 = 0., 
+ P1 = 5.611, P2 = 1.051, P3 = 0.59, P4 = -0.087, P5 = 1.051, 
+ P6 = 0.59, P7 = 0., V = 0., R0 = 0., RV = 0., VR0 = 0., 
+ A = 0., AV = 0., W = 0., WR0 = 0., RW = 0., AW = 0., WA = 0., 
+ R0W = 0., VSO = 0., RSO = 0., RSO0 = 0., ASO = 0., VSOI = 0., 
+ RSOI = 0., ASOI = 0., WD = 0., WDR = 0., WDA = 0., WDR0 = 0., 
+ AWD = 0., DEFP = 9*0., DEFT = 9*0., VD = 0., VDR = 0., 
+ VDA = 0., LSHAPE = 0, JL = ' ', XLVARY = 0., ALVARY = 0., 
+ CITT = ' ', 
+ /
+ loop = -1  is type = 3 0. 5.611 1.051 0.59 -0.087 1.051 0.59 0. 0.
+
+ &POT KP = 0, TYPE = 0, ITT = F, NOSUB = F, SHAPE = 0, DEF = 9*0., 
+ MNEP = 9*0., MNET = 9*0., AP = 0., AT = 0., RC = 0., AC = 0., 
+ P = 9*0., P0 = 0., P1 = 0., P2 = 0., P3 = 0., P4 = 0., 
+ P5 = 0., P6 = 0., P7 = 0., V = 0., R0 = 0., RV = 0., VR0 = 0., 
+ A = 0., AV = 0., W = 0., WR0 = 0., RW = 0., AW = 0., WA = 0., 
+ R0W = 0., VSO = 0., RSO = 0., RSO0 = 0., ASO = 0., VSOI = 0., 
+ RSOI = 0., ASOI = 0., WD = 0., WDR = 0., WDA = 0., WDR0 = 0., 
+ AWD = 0., DEFP = 9*0., DEFT = 9*0., VD = 0., VDR = 0., 
+ VDA = 0., LSHAPE = 0, JL = ' ', XLVARY = 0., ALVARY = 0., 
+ CITT = ' ', 
+ /
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0
+ WOUT,ITER,FALLOC = F 1 T
+ 0.5 +NUMCC: 1 1
+ 0.5 +CCSET: 1 1 0
+ 0.5 -NUMCC: 1 1
+ 0.5 -CCSET: 1 1 0
+ 1.5 +NUMCC: 1 1
+ 1.5 +CCSET: 1 1 0
+ 1.5 -NUMCC: 1 1
+ 1.5 -CCSET: 1 1 0
+ 2.5 +NUMCC: 1 1
+ 2.5 +CCSET: 1 1 0
+ 2.5 -NUMCC: 1 1
+ 2.5 -CCSET: 1 1 0
+ 3.5 +NUMCC: 1 1
+ 3.5 +CCSET: 1 1 0
+ 3.5 -NUMCC: 1 1
+ 3.5 -CCSET: 1 1 0
+ 4.5 +NUMCC: 1 1
+ 4.5 +CCSET: 1 1 0
+ 4.5 -NUMCC: 1 1
+ 4.5 -CCSET: 1 1 0
+ 5.5 +NUMCC: 1 1
+ 5.5 +CCSET: 1 1 0
+ 5.5 -NUMCC: 1 1
+ 5.5 -CCSET: 1 1 0
+ 6.5 +NUMCC: 1 1
+ 6.5 +CCSET: 1 1 0
+ 6.5 -NUMCC: 1 1
+ 6.5 -CCSET: 1 1 0
+ 7.5 +NUMCC: 1 1
+ 7.5 +CCSET: 1 1 0
+ 7.5 -NUMCC: 1 1
+ 7.5 -CCSET: 1 1 0
+ 8.5 +NUMCC: 1 1
+ 8.5 +CCSET: 1 1 0
+ 8.5 -NUMCC: 1 1
+ 8.5 -CCSET: 1 1 0
+ 9.5 +NUMCC: 1 1
+ 9.5 +CCSET: 1 1 0
+ 9.5 -NUMCC: 1 1
+ 9.5 -CCSET: 1 1 0
+ 10.5 +NUMCC: 1 1
+ 10.5 +CCSET: 1 1 0
+ 10.5 -NUMCC: 1 1
+ 10.5 -CCSET: 1 1 0
+ 11.5 +NUMCC: 1 1
+ 11.5 +CCSET: 1 1 0
+ 11.5 -NUMCC: 1 1
+ 11.5 -CCSET: 1 1 0
+ 12.5 +NUMCC: 1 1
+ 12.5 +CCSET: 1 1 0

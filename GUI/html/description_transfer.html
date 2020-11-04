@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script type="text/javascript"
+				src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	</head>
+    <body>
+		<p> In a transfer reaction, a valence nucleon (or its cluster) is transferred from/to projectile to/from target.
+		One could use optical model as a potential between core-valence in entrance and exit channel, and if needed, potential between core-core cluster.
+		Also the bound states in projectile- and target-like cluster require bot only corresponding optical potentials but also their quantum numbers. </p>
+
+		<p> From the inforamtion given at [Partition tab], the valence and core objects are deternmined.
+		One have to specify the valence particle level of each bound state.
+		For the convenience, available \(L\) and \(j\) will be suggested according to each system.
+		Principal quantum number \(n\) should be required.
+		Especially in case the valence is a single nucleon (proton or neutron), \(n\) is easily assumed in viwepoint of the shell model.
+		The bindig energies (BE) are calculated automatically, but you can put the values directly if you want. 
+		The spectroscopy amplitude (S.A.) is related to the probability of finding the valence particle  in a given state of core.
+		<!-- <div style='text-align:center'><img src='C:\Users\user\Documents\GitHub\GUI\Fresco_GUI\html\transfer.png' width='480'></div> --> 
+		<div style='text-align:center'><img src='transfer.png' width='480'></div>
+		One are required to select between the \(\textit{prior}\)- or \(\textit{post}\)-representation.
+		The hamiltonain with prior form is
+		\[ H_\textrm{prior} = T_\textbf{R} + U_i(R) + H_p(\textbf{r}) + \mathcal{V}_i(\textbf{R},\textbf{r}) \]
+		where
+		\[ \mathcal{V}_i(\textbf{R},\textbf{r}) = V_t(\textbf{r}^\prime) + U_{c^\prime c}(\textbf{R}_c) - U_i(R)~~. \]
+		On the other hand, the hamiltonain with post form is
+		\[ H_\textrm{post} = T_{\textbf{R}^\prime} + U_f(R^\prime) +H_t(\textbf{r}^\prime) + \mathcal{V}_f(\textbf{R}^\prime,\textbf{r}^\prime) \]
+		where
+		\[ \mathcal{V}_f(\textbf{R}^\prime,\textbf{r}^\prime) = V_p(\textbf{r}) + U_{c^\prime c}(\textbf{R}_c) - U_f(R^\prime)~~. \]
+		</p>
+	</body>
+</html>

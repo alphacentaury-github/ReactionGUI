@@ -1,9 +1,9 @@
 
-Reference Number = 6200 Incident Particle: deuteron
-Target: Z=  6 A=  12 Number of energies=   1
+Reference Number = 4101 Incident Particle: proton  
+Target: Z= 48 A= 112 Number of energies=   1
 Type potential: spherical    non-dispersive               non-relativistic
-First Author: Haixia        
-Z-Range= 6- 92  A-Range= 12-238  E-Range=   1.000- 200.000 MeV         Ef =-17.730
+First Author: F.D.Becchetti 
+Z-Range=20- 83  A-Range= 40-209  E-Range=  10.000-  50.000 MeV         Ef = -7.864
 
 En(MeV)     V    RV    AV    DWV      W    RW    AW     VD   RVD   AVD     WD   RWD   AWD    VSO   RVSO  AVSO   WSO   RWSO  AWSO   VHFpn WSpn DVSpn    WVpn    DVVpn   V(Lane)  W(Lane)    E
- 10.000 91.054 1.149 0.748  0.000  1.726 1.349 0.626  0.000 0.000 0.000 10.524 1.400 0.673  3.557 0.972 1.011  0.000 0.000 0.000
+ 20.400 54.884 1.170 0.750  0.000  1.788 1.320 0.610  0.000 0.000 0.000  8.414 1.320 0.610  6.200 1.010 0.750  0.000 0.000 0.000

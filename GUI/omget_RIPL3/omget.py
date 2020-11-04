@@ -64,7 +64,9 @@ def global_omp_get(ap,zp,at,zt,elab,omp_id,omget_exe =here+"/omget.exe"):
                 'rc': 0,
                 'V': [0,0,0], 'W': [0,0,0],
                 'Vso': [0,0,0], 'Wso':[0,0,0],
-                'Vd': [0,0,0], 'Wd':[0,0,0] }
+#                'Vd': [0,0,0], 'Wd':[0,0,0] }
+                'Vd': [0,0,0], 'Wd':[0,0,0],
+                'desc':[]}#, 'desc2':'', 'desc3':'', 'desc4':'', 'desc5':'', 'desc6':''}
     try:
         os.remove(here+'/ecis.inp')
         os.remove(here+'/ominput.inp' )
@@ -76,7 +78,24 @@ def global_omp_get(ap,zp,at,zt,elab,omp_id,omget_exe =here+"/omget.exe"):
     ff.write('%f\n' % elab)
     ff.write('%d %d %d -2\n' % (int(zt), int(at), int(omp_id)))
     ff.close()
-    #print(omget_exe) 
+    #print(omget_exe)
+#
+    descr_line = []
+    gg = open(here+'/om-parameter-u.dat','r')
+    gglines = gg.readlines()
+    gline_num = 0
+    for gline in gglines:
+        gline_num = gline_num+1
+        if gline_num < len(gglines)-1:
+            if gline[1:10] == '+++++++++' and int(gglines[gline_num]) == omp_id:
+#                descr_line = []
+                for i in range(1,7):
+                    descr_line.append(gglines[gline_num+i][:-1])
+                    omp_para.update(desc = descr_line)    
+        else:
+            break
+    gg.close()
+#
     proc= Popen(omget_exe ,shell=True,cwd=here)
     out, err = proc.communicate()
     proc.wait() 

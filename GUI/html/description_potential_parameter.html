@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<script type="text/javascript"
+				src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	</head>
+    <body>
+		<ul>
+			Here we use the notation as \( R_{c,v,w} = r_{c,v,w} (A_1^{1/3} + A_2^{1/3}) \)		
+			<li> Coulomb term </li>
+				\[ V_\textrm{Coul} = Z_1 Z_2 e^2 \times \begin{cases} (\frac{3}{2}-\frac{R^2}{2R_c^2})\frac{1}{R_c} & \textrm{for}~~~R \leq R_c \\
+																		~~~~~~~\frac{1}{R}                          & \textrm{for}~~~R \geq R_c \end{cases} \]
+			<li> Volume term </li>
+			<ul>
+				<li> Woods-Saxson </li>
+					\[ -\frac{V}{1+\exp[(R-R_v)/a_v]} - \frac{iW}{1+\exp[(R-R_w)/a_w]}\]
+				<li> Woods-Saxson squared </li>
+					\[ -\frac{V}{(1+\exp[(R-R_v)/a_v])^2} - \frac{i W}{(1+\exp[(R-R_w)/a_w])^2}\]
+				<li> Gaussian </li>
+					\[ -V\exp[-(R-R_v)^2/a_v^2] -i W\exp[-(R-R_w)^2/a_w^2] \]
+				<li> Yukawa </li>
+					\[ -\frac{V \exp[-(R-R_v)/a_v]}{R} -\frac{i W \exp[-(R-R_w)/a_w]}{R} \]
+				<li> Exponestial </li>
+					\[ -V\exp[-(R-R_v)/a_v] -i W\exp[-(R-R_w)/a_w] \]
+			</ul>
+			<li> Surface term : this is first derivative form of volume term </li>
+			<ul>
+				<li> Woods-Saxson </li>
+					\[ -\frac{4~V \exp[-(R-R_v)/a_v]}{(1+\exp[-(R-R_v)/a_v])^2} - i\frac{4~W \exp[-(R-R_w)/a_w]}{(1+\exp[-(R-R_w)/a_w])^2} \]
+				<li> Woods-Saxson squared </li>
+					\[ -\frac{8~V \exp[-2(R-R_v)/a_v]}{(1+\exp[-(R-R_v)/a_v])^3} - i\frac{8~W \exp[-2(R-R_w)/a_w]}{(1+\exp[-(R-R_w)/a_w])^3}\]
+				<li> Gaussian </li>
+					\[ -2~V\left(\frac{R-R_v}{a_v}\right)\exp[-(R-R_v)^2/a_v^2] - 2i~W\left(\frac{R-R_w}{a_w}\right)\exp[-(R-R_w)^2/a_w^2]\]
+				<li> Yukawa </li>
+					\[ -\frac{V}{R^2}\left(1+\frac{R}{a_v}\right)\exp[-(R-R_v)/a_v] - i~\frac{W}{R^2}\left(1+\frac{R}{r_w}\right)\exp[-(R-R_w)/a_w] \]
+				<li> Exponestial </li>
+					\[ -V\exp[-(R-R_v)/a_v] -i W\exp[-(R-R_w)/a_w] \]	
+			</ul>
+			<li> spin-orbit term : each term must be multiplied by \( \frac{\hbar^2}{2m_\pi^2 c^2} \approx 2.0 \)</li>
+			<ul>
+				<li> Woods-Saxson </li>
+					\[ -\frac{V\exp[-(R-R_v)/a_v]}{a_v R~(1+\exp[-(R-R_v)/a_v])^2} -\frac{iW\exp[-(R-R_w)/a_w]}{a_w~R(1+\exp[-(R-R_w)/a_w])^2} \]
+				<li> Woods-Saxson squared </li>
+					\[ -\frac{V\exp[-2(R-R_v)/a_v]}{2a_v R~(1+\exp[-(R-R_v)/a_v])^3} -\frac{iW\exp[-2(R-R_w)/a_w]}{2a_w R~(1+\exp[-(R-R_w)/a_w])^3} \]
+				<li> Gaussian </li>
+					\[ -\frac{V(R-R_v)}{2 a_v^2 R}\exp[-(R-R_v)^2/a_v^2] - i\frac{W(R-R_w)}{2 a_w^2 R}\exp[-(R-R_w)^2/a_w^2] \]
+				<li> Yukawa </li>
+					\[ -\frac{V}{4a_v R^3}\left(1+\frac{R}{a_v}\right)\exp[-(R-R_v)/a_v] -i\frac{W}{4a_w R^3}\left(1+\frac{R}{a_w}\right)\exp[-(R-R_w)/a_w] \]
+				<li> Exponestial </li>
+					\[ -\frac{V}{4a_v R}\exp[-(R-R_v)/a_v] -i\frac{W}{4a_w R}\exp[-(R-R_w)/a_w] \]	
+			</ul>
+		</ul>
+	</body>
+</html>

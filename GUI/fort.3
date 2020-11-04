@@ -1,0 +1,72 @@
+ &PARTITION NAMEP = '1H      ', MASSP = 1.00783, ZP = 1., 
+ NEX = 1, PWF = T, NAMET = '112Cd   ', MASST = 111.903, 
+ ZT = 48., QVAL = 0., READSTATES = 0, 
+ /
+ &STATES JP = 0.5, COPYP = 0, PTYP = 1, BANDP = 1, EP = 0., 
+ KKP = 0., TP = 0., CPOT = 1, JT = 0., COPYT = 0, PTYT = 1, 
+ BANDT = 1, ET = 0., KKT = 0., TT = 0., FEXCH = F, IGNORE = F, 
+ INFAM = 0, OUTFAM = 0, 
+ /
+ &partition /
+ &POTL KPI = 1, TYPEI = 0, ITT = F, NOSUB = F, SHAPEI = 0, 
+ P = 0., 112., 0., 1.233, 5*0., LSHAPEI = 0, JL = ' ', XLVARY = 0., 
+ ALVARY = 0., 
+ /
+ &POTL KPI = 1, TYPEI = 1, ITT = F, NOSUB = F, SHAPEI = 0, 
+ P = 0., 53.621, 1.22, 0.661, 1.552, 1.22, 0.661, 2*0., 
+ LSHAPEI = 0, JL = ' ', XLVARY = 0., ALVARY = 0., 
+ /
+ &POTL KPI = 1, TYPEI = 2, ITT = F, NOSUB = F, SHAPEI = 0, 
+ P = 4*0., 8.571, 1.266, 0.577, 2*0., LSHAPEI = 0, JL = ' ', 
+ XLVARY = 0., ALVARY = 0., 
+ /
+ &POTL KPI = 1, TYPEI = 3, ITT = F, NOSUB = F, SHAPEI = 0, 
+ P = 0., 5.611, 1.051, 0.59, -0.087, 1.051, 0.59, 2*0., 
+ LSHAPEI = 0, JL = ' ', XLVARY = 0., ALVARY = 0., 
+ /
+ &potl /
+ &overlap /
+ &coupling /
+ 'End of couplings'
+
+
+ parameters:    mxx    mxp  mxpex  maxit maxcpl maxnnu 
+   required:      1      1      2      0      1     18
+
+ parameters:   maxn  mint  maxnln maxnlo    msp  lmax1  mpair
+   required:   2002   2001     41   1001      1    120      1
+
+ parameters:     mloc   mclist   maxqrn
+   required:        4        6        1
+
+
+ parameters:     mloc   mclist   maxqrn
+   required:        4        6        1
+
+
+112Cd(1H,1H)112Cd at 20.4 MeV                                                   
+NAMELIST
+ &FRESCO HCM = 0.01, RMATCH = 20., RINTP = 0.5, HNL = 0.01, 
+ RNL = 10., CENTRE = 0., HNN = 0.5, RNN = 0., RMIN = 0., 
+ RSP = 20., RASYM = 0., ACCRCY = 0.0010000000474974513, 
+ SWITCH = 0., AJSWTCH = 0., SINJMAX = 0., PLANE = 0, JTMIN = 0., 
+ JTMAX = 100., ABSEND = 0.10000000149011612, DRY = F, RELA = ' ', 
+ NEARFA = 1, JUMP = 6*0, JBORD = 7*0., PSET = 0, JSET = 0, 
+ JLEAST = 0., KQMAX = 0, PP = 0, THMIN = 0., THMAX = 180., 
+ THINC = 1., KOORDS = 0, CUTL = -1.600000023841858, CUTR = 0., 
+ CUTC = 0., COMPLEXBINS = F, IPS = 0., IT0 = 0, ITER = 1, 
+ FATAL = T, IBLOCK = 0, PADE = 0, PSIREN = F, ISO = ' ', 
+ NNU = 18, MAXL = 106, MINL = 0, MTMIN = 6, EPC = 2.7777777777777777, 
+ ERANGE = 0., DK = 0., NOSOL = F, NRBASES = 0, NRBMIN = 0, 
+ PRALPHA = F, PCON = 0, RMATR = 20., EBETA = 2*0., MEIGS = 0, 
+ BUTTLE = 0, WEAK = 0.0010000000474974513, LLMAX = -1, EXPAND = 1.2000000476837158, 
+ 1., 0., 4., 0.4000000059604645, 2., 5*1., HKTARG = 0.20000000298023224, 
+ CHANS = 1, LISTCC = 0, TRENEG = 0, CDETR = 0, SMATS = 2, 
+ XSTABL = 1, NLPL = 0, WAVES = 0, LAMPL = 0, VEFF = 0, KFUS = 0, 
+ WDISK = 0, BPM = 0, MELFIL = 0, CDCC = 0, NFUS = 0, NPARAMETERS = 0, 
+ SMALLCHAN = 0., SMALLCOUP = 0., NUMNODE = 0, SUMFORM = 2, 
+ MAXCOUP = 3*0, OMPFORM = 0, INITWF = 0, INH = 0, TMP = '                                                                      ', 
+ MASFIL = '/netopt/PHS1IT/lib/m88lrb                                             ', 
+ UNITMASS = 1., FINEC = 137.03599, PEL = 1, EXL = 1, LAB = 1, 
+ LIN = 1, LEX = 1, ELAB = 20.4, 4*0., NLAB = 4*0, 
+ /
