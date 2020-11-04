@@ -3,6 +3,8 @@ GUI for easy and intuitive reaction calculation
 
 Written by Y.-H. Song(yhsong@ibs.re.kr), I.J. Shin(geniean@ibs.re.kr)
 
+Last modified 2020-11-04
+
 ## Disclamer 
     Copyright (c) 2020, All rights reserved.
     
