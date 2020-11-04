@@ -1,6 +1,20 @@
 # ReactionGUI
 GUI for easy and intuitive reaction calculation
 
+Written by Y.-H. Song(yhsong@ibs.re.kr), I.J. Shin(geniean@ibs.re.kr)
+
+## Disclamer 
+    Copyright (c) 2020, All rights reserved.
+    
+    ReactionGUI is free software: you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    
+    ReactionGUI is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
 ## Requirements
 Recommend to install Anaconda( https://www.anaconda.com/products/individual ) for python environment 
 
