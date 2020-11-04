@@ -52,7 +52,7 @@ ReactionGUI can compute (with a interface to Fresco )
 3. transfer reaction using Distorted Wave Born Approximation in cluster model
 
 Capability of doing coupled cluster calculation, CDCC, radiative capture, fusion reaction
-are planned but not yet included. 
+are planned but not yet available. 
 
 ## Known Errors
 1. Symptom : DLL load failed while importing xxx 
