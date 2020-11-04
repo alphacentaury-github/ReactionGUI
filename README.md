@@ -25,24 +25,20 @@ Recommend to install Anaconda( https://www.anaconda.com/products/individual ) fo
 5. scipy ( install with command "pip install scipy")
 ---followings are included and thus no separate install/download is not necessary. ---
 6. executable file of FRESCO and SFRESCO. 
-  ( precompiled executable files are included.  
-    Or Download/Compile from http://www.fresco.org.uk/ 
-    and place it in the same folder of main.py ) 
+  ( from http://www.fresco.org.uk/ ) 
 7. executable file of OMGET and required data files. 
-  ( precompiled executable files and data are included.
-    Or Download/Compile from https://www-nds.iaea.org/RIPL-3/ (in the OPTICAL tab)
-    and place it at the folder "omget_RIPL3/" ) 
+  ( from https://www-nds.iaea.org/RIPL-3/ (in the OPTICAL tab) ) 
 8. density profile data files from HFB-14 calculation. 
-  ( Located at folder "DoubleFolding/density-hfb14/". 
-    Or Download from https://www-nds.iaea.org/RIPL-3/ ( in the MASSES tab)
-   )
+  ( from https://www-nds.iaea.org/RIPL-3/ ( in the MASSES tab) )
    
 ## Usage
+For OSX and linux : one have to set the executable file path using the 'Configure' menu.     
+
 There are two ways to run the code 
 
-1. type 'python main.py' in the terminal.( within python environment) 
-2. modify 'main.bat' file for the correct path and run batch file. 
-3. For OSX and linux : set the executable file path using the 'Configure' menu.     
+1. type 'python main.py' in the (anaconda) terminal. 
+2. modify 'main.bat' file for the correct path and run batch file in Windows. 
+
 
 ## Known Errors
 1. Symptom : DLL load failed while importing xxx 
