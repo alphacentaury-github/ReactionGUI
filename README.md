@@ -27,7 +27,7 @@ Recommend to install Anaconda( https://www.anaconda.com/products/individual ) fo
 4. numpy ( install with command "pip install numpy")
 5. scipy ( install with command "pip install scipy")
 
----followings are included and thus no separate install/download is not necessary. ---
+---followings are included and thus no separate install/download is necessary. ---
 
 6. executable file of FRESCO and SFRESCO. 
   ( from http://www.fresco.org.uk/ ) 
