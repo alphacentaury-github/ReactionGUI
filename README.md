@@ -3,20 +3,7 @@ GUI for easy and intuitive reaction calculation
 
 Written by Y.-H. Song(yhsong@ibs.re.kr), I.J. Shin(geniean@ibs.re.kr)
 
-Last modified 2020-11-04
-
-## Notice 
-    Copyright (c) 2020, All rights reserved.
-    
-    ReactionGUI is free software: you can redistribute it and/or modify it
-    under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-    
-    ReactionGUI is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-    GNU General Public License for more details.
+Last modified 2020-11-04. version 1.0
     
 ## Requirements
 Recommend to install Anaconda( https://www.anaconda.com/products/individual ) for python environment 
@@ -56,13 +43,24 @@ ReactionGUI can compute (with a interface to Fresco )
 Capability of doing coupled cluster calculation, CDCC, radiative capture, fusion reaction
 are planned but not yet available. 
 
-## Known Errors
-1. Symptom : DLL load failed while importing xxx 
+## Known Problems
+1. Symptom : "DLL load failed while importing xxx" 
 
    Solution: update anaconda(or python packages) to newest version 
-2. Symptom : No experimental data for fitting
+   
+2. Symptom : "No experimental data for fitting"
 
    Solution : One have to click "exp data" button before fitting. 
-   
-   
-   
+      
+## Notice 
+    Copyright (c) 2020, All rights reserved.
+    
+    ReactionGUI is free software: you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    
+    ReactionGUI is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.   
