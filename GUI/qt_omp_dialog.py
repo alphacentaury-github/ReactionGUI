@@ -46,8 +46,16 @@ Created on Wed May 13 13:00:38 2020
 """
 import sys
 import os
-#from PyQt5.QtWidgets import *
-from PyQt5.QtWidgets import (QApplication,QMainWindow,QDialog,QFileDialog)
+
+from PyQt5.QtWidgets import (QApplication,QMainWindow,
+                             QDialog,QFileDialog,QWidget,
+                             QComboBox,QLabel,QLineEdit,QCheckBox,
+                             QMenu,QMenuBar,
+                             QHBoxLayout,QVBoxLayout,QGridLayout,
+                             QGroupBox,QToolBox,QTabWidget,
+                             QPushButton,QTextBrowser,
+                             QSpacerItem,
+                             QRadioButton)
 from PyQt5 import uic
 #from PyQt5.QtCore import *
 
@@ -97,10 +105,32 @@ class DialogOMP_GUI(QDialog,form_omp):
         text = ' {}{}+{}{} at Elab={} MeV'.format(
             ap,element_names[zp],at,element_names[zt],elab)
         self.label.setText(text)
-        #--available omp list
+        #----------------------
+        # choose kinematics 
+        #-----------------------
+        self.lineEdit_ap.setText('{}'.format(ap))
+        self.lineEdit_zp.setText('{}'.format(zp))
+        self.lineEdit_at.setText('{}'.format(at))
+        self.lineEdit_zt.setText('{}'.format(zt))
+        self.lineEdit_elab.setText('{}'.format(elab))
+        self.button_change.clicked.connect(self.change_kinematics) 
+        #----list         
+        self.listWidget.itemSelectionChanged.connect(self.update)
+        #---initialize 
+        self.change_kinematics() 
+         
+    def change_kinematics(self,):
+        # changes kinemtics to search omp para 
+        # Note that this change only affects omp para values 
+        # and does not change ap,zp,at,zt of input 
+        ap = int(self.lineEdit_ap.text())
+        zp = int(self.lineEdit_zp.text())
+        at = int(self.lineEdit_at.text())
+        zt = int(self.lineEdit_zt.text())
+        elab = float(self.lineEdit_elab.text())
+        self.listWidget.clear() 
         self.omp_list = global_omp_choose(ap,zp,at,zt,elab)
         if self.omp_list != []:
-#        self.listWidget.addItems([ i[1]   for i in self.omp_list]  )
             self.listWidget.addItem('proj.     Ztarg          Atarg                   Elab                  Author')
             for i in self.omp_list:
                 om_info='{0:8}{1:3} - {2:3}     {3:3} - {4:3}     {5:8.3f} - {6:8.3f}     {7}'.format(i[1],i[2],i[3],i[4],i[5],i[6],i[7],i[8])
@@ -109,9 +139,7 @@ class DialogOMP_GUI(QDialog,form_omp):
         else:
             self.listWidget.addItem("Sorry, we cannot suggest any appropriate OM parameter.")
         self.update()
-        self.listWidget.itemSelectionChanged.connect(self.update)
-
-
+        
     def take_data(self,):
         # actions to store data and update parent window
         # if rejected, not update parent window
