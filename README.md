@@ -3,7 +3,7 @@ GUI for easy and intuitive reaction calculation
 
 Written by Y.-H. Song(yhsong@ibs.re.kr), I.J. Shin(geniean@ibs.re.kr)
 
-Last modified 2020-11-04. version 1.0
+Last modified 2020-11-06. version 1.0.1
     
 ## Requirements
 Recommend to install Anaconda( https://www.anaconda.com/products/individual ) for python environment 
