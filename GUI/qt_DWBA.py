@@ -216,7 +216,10 @@ class Partition_GUI(QWidget,):
         self.list_of_reactions = ['Elastic',
                                 'Inelastic-target-ex',
                                 'Inelastic-proj-ex',
-                                'Transfer']
+                                'Transfer',
+                                'radiative-capture',
+                                'Fusion',
+                                'nucleon knockout']
         #----Entrance channel
         self.Widget_proj = enter_nuclei(label_txt='Proj',nuc_name='2H')
         self.Widget_targ = enter_nuclei(label_txt='Targ',nuc_name='12C')
@@ -286,7 +289,7 @@ class Partition_GUI(QWidget,):
             self.Widget_heavy.setParent(None)
         except:
             pass
-        #----add Widgets to layout according to reaction choice
+        #----add Widgets to layout according to reaction choice        
         if reaction_index == 0:
             self.layout.addWidget(self.Widget_qval)
         elif reaction_index in [1,2]:
@@ -303,6 +306,24 @@ class Partition_GUI(QWidget,):
             out = self.Widget_targ.get_values()
             self.Widget_heavy.lineEdit.setText(out['name'])
             self.Widget_heavy.name_entered()
+        elif self.list_of_reactions[reaction_index]=='Fusion':
+            import qt_ccfull
+            proj_data = self.Widget_proj.get_values()
+            targ_data = self.Widget_targ.get_values()  
+            my_window = qt_ccfull.CCFULL_GUI(ap=proj_data['A'],
+                 zp=proj_data['Z'],
+                 at=targ_data['A'],zt=targ_data['Z'],
+                 enrange=(55.0,72.0,1.0),
+                 ccfull_directory ='Hagino_CCfull/',
+                 default_values=False)
+            my_window.show() 
+        elif self.list_of_reactions[reaction_index]=='nucleon knockout':
+            import qt_momdis
+            my_window = qt_momdis.momdis_GUI()
+            my_window.show()
+        elif self.list_of_reactions[reaction_index]=='radiative-capture':
+            self.status_label.setText(self.list_of_reactions[reaction_index]
+                                     +' reaction is not available yet')         
         else :
             self.status_label.setText(self.list_of_reactions[reaction_index]
                                      +' reaction is not available yet')

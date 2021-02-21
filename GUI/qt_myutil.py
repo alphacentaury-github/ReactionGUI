@@ -48,17 +48,18 @@ Collection of useful class/functions using Qt
 """
 import sys
 import os
+import re 
 #from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtWidgets import (QApplication,QMainWindow,QDialog,QFileDialog,QWidget,
+                             QDialogButtonBox,
                              QComboBox,QLabel,QLineEdit,QCheckBox,
                              QHBoxLayout,QVBoxLayout,QGridLayout,
                              QGroupBox,QToolBox,QTabWidget,QPushButton,QTextBrowser,
+                             QPlainTextEdit,QProgressBar,
                              QSpacerItem,QRadioButton)
-
-from PyQt5.QtCore import QUrl
-
 from PyQt5 import uic
 from PyQt5 import QtCore
+from PyQt5.QtCore import (QProcess,QByteArray,QUrl) 
 
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import (
@@ -145,7 +146,9 @@ class combined_Widgets_horizontal(QWidget,):
             elif isinstance(widg, QComboBox):
                 self.data[index] = widg.currentIndex()
             elif isinstance(widg, QRadioButton):
-                self.data[index] = widg.isChecked() 
+                self.data[index] = widg.isChecked()
+            elif isinstance(widg, QCheckBox):
+                self.data[index] = widg.isChecked()     
             else: #other widgets are skipped
                 pass 
         return self.data
@@ -169,6 +172,8 @@ class combined_Widgets_horizontal(QWidget,):
             elif isinstance(widg, QComboBox):
                 widg.setCurrentIndex(data[index])
             elif isinstance(widg,QRadioButton):
+                widg.setChecked(data[index])
+            elif isinstance(widg, QCheckBox):
                 widg.setChecked(data[index])
             else: #other widgets are skipped
                 pass
@@ -217,7 +222,9 @@ class combined_Widgets_vertical(QWidget,):
             elif isinstance(widg, QComboBox):
                 self.data[index] = widg.currentIndex()
             elif isinstance(widg, QRadioButton):
-                self.data[index] = widg.isChecked()         
+                self.data[index] = widg.isChecked()  
+            elif isinstance(widg, QCheckBox):
+                self.data[index] = widg.isChecked()    
             else: #other widgets are skipped
                 pass
         return self.data
@@ -240,6 +247,8 @@ class combined_Widgets_vertical(QWidget,):
             elif isinstance(widg, QComboBox):
                 widg.setCurrentIndex(data[index])
             elif isinstance(widg, QRadioButton):
+                widg.setChecked(data[index])
+            elif isinstance(widg, QCheckBox):
                 widg.setChecked(data[index])
             else: #other widgets are skipped
                 pass
@@ -295,6 +304,8 @@ class combined_Widgets_grid(QWidget,):
                     self.data[(row_index,col_index)] = widg.currentIndex()
                 elif isinstance(widg, QRadioButton):
                     self.data[(row_index,col_index)] = widg.isChecked() 
+                elif isinstance(widg, QCheckBox):
+                    self.data[(row_index,col_index)] = widg.isChecked()     
                 else: #other widgets are skipped
                     pass
         return self.data
@@ -320,6 +331,8 @@ class combined_Widgets_grid(QWidget,):
                 elif isinstance(widg, QComboBox):
                     widg.setCurrentIndex(data[(row_index,col_index)])
                 elif isinstance(widg, QRadioButton):
+                    widg.setChecked(data[(row_index,col_index)])
+                elif isinstance(widg, QCheckBox):
                     widg.setChecked(data[(row_index,col_index)])
                 else: #other widgets are skipped
                     pass
@@ -499,3 +512,187 @@ class WidgetMatplot(QWidget,):
             ax.grid()
         self.add_plot(fig)
         return
+    
+#============================================================================    
+class Widget_external(QWidget):
+    # Widget to call external command line program 
+    #  for example: Widget_external("python",["dummy_script.py"])
+    """
+     At the moment, setWorkingDirectory seems to be not working... 
+     
+     before_run is a function to be done before running program 
+     after_run is a function to be done after running program
+     
+     one can send signal to external program 
+     (1) interactive
+     (2) series of inputs prepared 
+         with list_sequence 
+    """
+    def __init__(self,program_name,argument_list=[],
+                 before_run =None,
+                 after_run = None,  
+                 working_directory=None,
+                 list_sequence=None):
+        super().__init__()
+        self.btn = QPushButton("Execute")
+        self.btn.pressed.connect(self.start_process)
+        # for series of inputs 
+        self.list_sequence = None
+        self.multi_run = None # if sequence requires restart
+        self.set_sequence(list_sequence)
+        self.ans = None 
+         
+        self.text = QPlainTextEdit()
+        self.text.setReadOnly(True)
+        self.input = QLineEdit() 
+        
+        self.enter_input = QPushButton('Enter') 
+        self.enter_input.clicked.connect(self.handle_input) 
+        answer_area=combined_Widgets_horizontal([QLabel('answer:'),
+                                                 self.input,
+                                               self.enter_input])
+
+        l = QVBoxLayout()
+        l.addWidget(self.btn)
+        l.addWidget(self.text)
+        l.addWidget(answer_area)
+        
+        self.setLayout(l)
+
+        self.p = None 
+        self.external_program = program_name
+        self.external_argument_list = argument_list
+        self.working_directory = working_directory
+        self.before_run = before_run 
+        self.after_run = after_run   
+            
+    def message(self,s):
+        self.text.appendPlainText(s)
+        
+    def set_sequence(self,list_sequence):    
+        # if list is a nested list of series of inputs [['1','2']]
+        # set it as a multi_run 
+        self.list_sequence = list_sequence
+        if list_sequence:
+          if any(isinstance(i, list) for i in list_sequence):
+              self.multi_run = True  
+          else:
+              self.multi_run = False 
+                
+    def start_process(self,):
+        # note that though with setWorkingDirectory 
+        # external program name should contain path.
+        self.text.clear()
+        # prepare run 
+        if self.before_run :
+            try:
+                self.before_run() 
+            except: 
+                self.text.appendPlainText(
+                        'Error in preparation/input\n')
+                return
+        # start sequence     
+        if self.list_sequence is None: # normal case
+            self.run_process()  
+        elif self.multi_run : # multiple run with answers
+            for tasks in self.list_sequence:
+                if self.p is None:
+                    self.run_process()
+                    if self.p.state()==2:
+                        for ans in tasks:
+                            self.ans = ans
+                            self.handle_input() 
+                            self.ans = None
+                    self.p.waitForFinished()                    
+        elif self.list_sequence: # a single run with answers      
+            self.run_process()
+            if self.p.state()==2:
+                for ans in self.list_sequence: 
+                    self.ans = ans 
+                    self.handle_input()
+                    self.ans = None # reset 
+            self.p.waitForFinished()        
+        # all process done  
+        if self.after_run:
+            try:
+                self.after_run()
+            except:
+                self.text.appendPlainText(
+                        'Error in calculation/output\n')
+                return
+        
+    def run_process(self,):
+        # note that though with setWorkingDirectory 
+        # external program name should contain path.          
+        if self.p is None: # No process is running 
+            #----connect slots     
+            self.message("Execute process.")
+            self.p = QProcess()
+            self.p.setProgram(self.external_program)
+            self.p.setArguments(self.external_argument_list)
+            if self.working_directory:
+                self.p.setWorkingDirectory(self.working_directory)
+            #---signals/slots     
+            self.p.readyReadStandardOutput.connect(self.handle_stdout)
+            self.p.readyReadStandardError.connect(self.handle_stderr)
+            self.p.stateChanged.connect(self.handle_state) 
+            self.p.finished.connect(self.process_finished)
+            self.p.start() 
+                            
+    def process_finished(self):
+        self.message("================Process finished======================")
+        self.p = None 
+               
+    def handle_stderr(self):
+        # get stderr message of external program 
+        # Because readAllStandardError() return 
+        # data as bytes,wrapped in a Qt object 
+        # thus, convert it into python bytes() object
+        # and then decode into a string 
+        data = self.p.readAllStandardError()
+        stderr = bytes(data).decode("utf8")
+        self.message(stderr)            
+        
+    def handle_stdout(self):
+        data = self.p.readAllStandardOutput()
+        stdout = bytes(data).decode("utf8")
+        self.message(stdout)       
+        
+    def handle_state(self,state):
+        """
+        state is signal of stateChanged
+        
+        QProcess.NotRunning	0	The process is not running.
+        QProcess.Starting	1	The process is starting, but the program has not yet been invoked.
+        QProcess.Running	2	The process is running and is ready for reading and writing.
+        """
+        states = {   
+            QProcess.NotRunning: 'Not running',
+            QProcess.Starting: 'Starting',
+            QProcess.Running: 'Running',
+        }
+        state_name = states[state]
+        self.message(f"State changed: {state_name}")
+    
+    def process_state(self,):    
+        if self.p:
+            return self.p.state() 
+        else:
+            return -1 # no process 
+        
+    def handle_input(self,):
+        # send input to external program 
+        # Note that Qprocess.write() takes bytes input
+        if self.ans is None:    
+            ans = self.input.text()
+        else:
+            ans = self.ans         
+        a = QByteArray()
+        a.append(ans+'\n') # input must end with newline
+        if self.p : #process is not finished
+            if self.p.state()==2: #process is ready
+                #self.handle_stdout()
+                self.p.write(a)
+                self.message(ans+' is sent to program') 
+                #--clear entered input  
+                self.input.clear()
