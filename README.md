@@ -3,9 +3,9 @@ GUI for easy and intuitive reaction calculation
 
 Written by Y.-H. Song(yhsong@ibs.re.kr), I.J. Shin(geniean@ibs.re.kr)
 
-2021-03-03. version 1.0.2 added GUI for fusion(CCFULL) and knockout(MOMDIS) reaction
+2021-03-03. added GUI for fusion(CCFULL) and knockout(MOMDIS) reaction
 
-2020-11-06. version 1.0.1
+2020-11-06. first version
     
 ## Requirements
 Recommend to install Anaconda( https://www.anaconda.com/products/individual ) for python environment 
