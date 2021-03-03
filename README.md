@@ -3,7 +3,9 @@ GUI for easy and intuitive reaction calculation
 
 Written by Y.-H. Song(yhsong@ibs.re.kr), I.J. Shin(geniean@ibs.re.kr)
 
-Last modified 2020-11-06. version 1.0.1
+Last modified 
+2021-03-03. version 1.0.2 added GUI for fusion(CCFULL) and knockout(MOMDIS) reaction
+2020-11-06. version 1.0.1
     
 ## Requirements
 Recommend to install Anaconda( https://www.anaconda.com/products/individual ) for python environment 
@@ -14,7 +16,8 @@ Recommend to install Anaconda( https://www.anaconda.com/products/individual ) fo
 4. numpy ( install with command "pip install numpy")
 5. scipy ( install with command "pip install scipy")
 
----followings are included and thus no separate install/download is necessary. ---
+---followings are included and thus no separate install/download is necessary for WINDOWS. ---
+---one have to prepare executable files for other OS.                                      ---
 
 6. executable file of FRESCO and SFRESCO. 
   ( from http://www.fresco.org.uk/ ) 
@@ -22,7 +25,11 @@ Recommend to install Anaconda( https://www.anaconda.com/products/individual ) fo
   ( from https://www-nds.iaea.org/RIPL-3/ (in the OPTICAL tab) ) 
 8. density profile data files from HFB-14 calculation. 
   ( from https://www-nds.iaea.org/RIPL-3/ ( in the MASSES tab) )
-   
+9. executable file of CCFULL.
+  ( from http://www2.yukawa.kyoto-u.ac.jp/~kouichi.hagino/ccfull.html ) 
+10. executable file of MOMDIS.   
+  ( from https://www.sciencedirect.com/science/article/pii/S0010465506001937?via%3Dihub )
+  
 ## Usage
 For OSX and linux : one have to set the executable file path using the 'Configure' menu.     
 
@@ -39,8 +46,10 @@ ReactionGUI can compute (with a interface to Fresco )
 1. elasctic scattering using optical potential 
 2. inelastic scattering using Distorted Wave Born Approximation in rotor model
 3. transfer reaction using Distorted Wave Born Approximation in cluster model
+4. fusion reaction in complex optical potential or incoming wave boundary condition in coupled channel method.
+5. one nucleon knockout reaction in eikonal approximation.
 
-Capability of doing coupled cluster calculation, CDCC, radiative capture, fusion reaction
+Capability of doing coupled cluster calculation, CDCC, radiative capture reaction
 are planned but not yet available. 
 
 ## Known Problems
