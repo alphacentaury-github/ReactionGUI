@@ -59,7 +59,11 @@ are planned but not yet available.
    
 2. Symptom : "No experimental data for fitting"
 
-   Solution : One have to click "exp data" button before fitting. 
+   Solution : One have to click "exp data" button before fitting.
+
+3. Symptom: Global optical potential is not available.
+
+   Solution: Check the path of executable of omget in the Configure menu
       
 ## Notice 
     Copyright (c) 2020, All rights reserved.
