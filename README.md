@@ -17,7 +17,8 @@ Recommend to install Anaconda( https://www.anaconda.com/products/individual ) fo
 5. scipy ( install with command "pip install scipy")
 
 ---followings are included and thus no separate install/download is necessary for WINDOWS. ---
----one have to prepare executable files for other OS.                                      ---
+
+---one have to compile executable files for other OS.                                      ---
 
 6. executable file of FRESCO and SFRESCO. 
   ( from http://www.fresco.org.uk/ ) 
