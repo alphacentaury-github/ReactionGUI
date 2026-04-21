@@ -130,6 +130,8 @@ def read_mass(a,z,fname=f_mass,subtract_electron=False):
    """
    import sys
    electron_mass = 0.510998 # MeV 
+   if (a<1): #photon case 
+     return 0.0  
    ff=open(fname,'r')
    lines=ff.readlines()
    ff.close
@@ -159,6 +161,15 @@ def read_nuclei(a,z,fname=f_nubase,subtract_electron=False):
    #out['mass']=bmass
    out['A']=a
    out['Z']=z
+   # special case of photon 
+   if (a,z) == (0,0) : # photon 
+      out['name']='Gamma'
+      out['mass_excess']=0.0
+      out['mass']=0.0
+      out['J'] = 1.0
+      out['P'] = 1
+      out['J_P'] ='1+'  
+      return out 
    for ii in ll:
       aa=int(ii[0:3])
       zz=int(ii[4:7])
@@ -211,6 +222,10 @@ def interp_nuclei_name(nuc_name):
         ww = nuc_name.split('-')
         nuc_a = int(ww[0])
         nuc_z = int(ww[1])
+        return (nuc_a,nuc_z)
+    if nuc_name in ['Gamma','g','photon'] : # photon case 
+        nuc_a = 0
+        nuc_z = 0
         return (nuc_a,nuc_z)
     else:
         head = nuc_name.lstrip('0123456789') # remove numbers 
@@ -322,24 +337,32 @@ def kin2_simplified(AP,ZP,AT,ZT,EN, AX=None,ZX=None,AR=None,ZR=None,
       EN_type=0 Lab 
               1 E/A
               2 CM  
+              
+      A=0,Z=0 means photon         
     """
     amu=931.4940954 #MeV
-    if (AX and ZX): # AX and ZX are given 
+    # Be careful when AX=0,ZX=0 case. 
+    if (AX is not None) and (ZX is not None): # AX and ZX are given 
          AR=AT+AP-AX
          ZR=ZT+ZP-ZX
     else :          
         AX,ZX,AR,ZR = AP,ZP,AT,ZT
-     
-    try:  
-          M_T=read_mass(AT,ZT)+EXT/amu # in amu units
-          M_P=read_mass(AP,ZP)+EXP/amu
-          M_X=read_mass(AX,ZX)+EXX/amu
-          M_R=read_mass(AR,ZR)+EXR/amu  
-          #Qval =(M_P+M_T-M_X-M_R)*amu # in MeV units # This includes Excitation energies
-          # or directly use mass excess 
-          Qval = get_Qvalue(AP,ZP,EXP,AT,ZT,EXT,AX,ZX,EXX,AR,ZR,EXR)
+    
+    try:
+        if (AP<1 or AT<1 or AR<1):
+            return 'Error: kinematics is not available for this case'
+        elif AX<1 : # photon case 
+            M_X=0.0
+        else:
+            M_X=read_mass(AX,ZX)+EXX/amu
+        M_T=read_mass(AT,ZT)+EXT/amu # in amu units
+        M_P=read_mass(AP,ZP)+EXP/amu
+        M_R=read_mass(AR,ZR)+EXR/amu  
+        #Qval =(M_P+M_T-M_X-M_R)*amu # in MeV units # This includes Excitation energies
+        # or directly use mass excess 
+        Qval = get_Qvalue(AP,ZP,EXP,AT,ZT,EXT,AX,ZX,EXX,AR,ZR,EXR)
     except: 
-          return 'mass is not known for nuclei' 
+        return 'mass is not known for nuclei' 
     if mass_opt=='NoAME16': # use mass as integer values. But, Qvalue still requires exact one 
           M_T=AT+EXT/amu # in amu units
           M_P=AP+EXP/amu
@@ -362,9 +385,14 @@ def kin2_simplified(AP,ZP,AT,ZT,EN, AX=None,ZX=None,AR=None,ZR=None,
       ELAB=ECM*M_P/MUI
       EpA=ELAB/AP      
     # equivalent X+R reaction     
-    ECMf=ECM+Qval
-    ELABf=ECMf*M_X/MUF
-    EpAf=ELABf/AX  # E/A for x
+    if AX>0:
+        ECMf=ECM+Qval
+        ELABf=ECMf*M_X/MUF
+        EpAf=ELABf/AX  # E/A for x
+    else : # X is photon 
+        ECMf =0.0 # these are not defined 
+        ELABf=0.0 
+        EpAf =0.0
     return (Qval,ELAB,EpA,ECM,ELABf,EpAf,ECMf)
     
 def kin2(AP,ZP,AT,ZT,EN,AX=None,ZX=None,AR=None,ZR=None,
@@ -469,13 +497,15 @@ def kin2(AP,ZP,AT,ZT,EN,AX=None,ZX=None,AR=None,ZR=None,
        + '(1) Masses from (AME16+Excitation energies) \n'
        + '   mP/amu    mT/amu      mX/amu    mR/amu   \n'  
        + ' %.6f %.6f %.6f %.6f \n'%(M_P,M_T,M_X,M_R)
+       + '   ZP  ZT  ZX  ZR\n'
+       + ' %3i %3i %3i %3i \n'%(ZP,ZT,ZX,ZR)       
        + '(2) Q value for T(P,X)R and reduced masses \n'
        + ' Qval(MeV) red_in/amu red_out/amu \n'
        + ' %8.3f %8.3f %8.3f \n' %(Qval,MUI,MUF)
        + ' E_threshold = %8.3f \n '%(E_threshold) 
        + '(3) Additional informations  \n'
-       + '    Eplab    E/A   Tcm_in   Tcm_out     kcm(MeV)  kcm_out   L_gr \n'
-       + ' %8.3f %8.3f %8.3f %8.3f %8.3f %8.3f %8.3f \n '%(ELAB,EpA,ECM,ECMf,kcm_i,kcm_f,L_i)
+       + '    Eplab    E/A   Tcm_in   Tcm_out     kcm(1/fm)  kcm_out   L_gr \n'
+       + ' %8.3f %8.3f %8.3f %8.3f %8.3f %8.3f %8.3f \n '%(ELAB,EpA,ECM,ECMf,kcm_i/hbarc,kcm_f/hbarc,L_i)
        + '    rho_kinematic  \n'
        + ' %.3e \n'%(rho_kinematic)  
        + '**** for S-factor \n'
@@ -726,85 +756,25 @@ def frame_convert2(data, m_a, m_A,m_b, m_B, E_a, en_opt=0 , mode=0 ):
     return output     
 
 #-----------------------------------------------------------------------------
-def WLH_global_optical_para(zp,at,zt,elab ):
+def AW_heavy_ion_potential_para(zp,ap,zt,at):
     """
-    Whitehead-Lim-Holt global optical potential 
-    arxiv: 2009.08436
+    Akyuz-Winther heavy ion potential 
+    it has only real part in WS form 
+    
+    returns WS potential parameters
 
-    Parameters
-    ----------
-    zp: int
-        charge of nucleon either 0 or 1.
-    at : integer
-        mass number of target 
-    zt : int
-        charge number of target
-    elab : float
-        energy of nucleon
-    Returns
-    -------
-    global optical potential parameters 
-
+    typically a~ 0.63 fm 
     """
-    # parameter sets # eq.(4)
-    # para[0] os for neutron ,para[1] is for proton 
-    para_uV = [ [53.459,-0.2356,-0.00133,1.317e-5,-2.88e-8,-20.58,0.317,
-         -0.00158,3.49e-6,-10.96,-0.0155],
-        [54.154,-0.252,-0.0011,1.19e-5,-2.6e-8,20.87,-0.306,
-         0.00172,-4.46e-6,-21.92,-0.01035]   ]  
-    para_rV = [ [1.298,-5.41e-4,1.98e-6,-0.397],
-        [1.310,-5.09e-4,1.98e-6,-0.391] ]
-    para_aV = [
-        [0.699,0.0023,-3.77e-5,2.38e-7,-5.14e-10,-0.171,0.625],
-        [0.773,-1.28e-4,-6.1e-6,5.39e-8,-1.67e-10,-0.746,0.522]
-        ]
-    para_uW = [
-        [2.23,0.262,-5.85e-4,-7.84,-0.046],
-        [3.80,0.237,-4.67e-4,11.9,-0.077]
-        ]
-    para_rW = [
-        [0.450,86.82,0.830,84.17,0.755,2.34e-6],
-        [0.543,48.78,0.708,54.23,0.499,9.93e-7]
-        ]
-    para_aW =[
-        [0.546,-0.287,-17.1,0.376,-0.00187],
-        [0.407,-0.394,-9.39,0.0599,-0.853]
-        ]
-    para_uS =[
-        [1.866,-0.0546,1.41e-4,-3.70,0.4218,-0.00842],
-        [0.774,-0.0216,-1.281,0.0316,0.0,0.0]
-        ]    
-    para_rS =[
-        [1.238,0.00275,-2.14e-4,-1.266],
-        [1.134,-0.0120,-3.25e-8,-0.836]
-        ]
-    para_aS =[
-        [0.578,0.0169,-3.82e-4,5.47e-4,3.91e-6],
-        [0.146,0.00362,-3.47e-4,0.019,-1.32e-4]
-        ]
-    para_uSO = [
-        [8.852,0.0127,-2.02e-4,5.57e-7],
-        [8.852,0.0127,-2.02e-4,5.57e-7]
-        ]
-    para_rSO = [[1.260,-0.827],
-                [1.260,-0.827]]
-    para_aSO =[[0.663,0.0032,-2.83e-5,6.58e-8],
-               [0.663,0.0032,-2.83e-5,6.58e-8]]
-    # compute each parameters for E,A,Z eq.(11-14)
-    AT = at
-    ZT = zt
-    delta =  (AT-2.0*ZT)/AT # (N-Z)/A
-    U_V = ( para_uV[zp][0]+ para_uV[zp][1]*elab+ para_uV[zp][2]*elab**2
-         + para_uV[zp][3]*elab**3+para_uV[zp][4]*elab**4
-         +(para_uV[zp][5]+para_uV[zp][6]*elab
-           +para_uV[zp][7]*elab**2+para_uV[zp][8]*elab**3)*delta
-         +para_uV[zp][9]*np.exp(para_uV[zp][10]*elab)*delta**2 )
-    r_V = ( para_rV[zp][0]+ para_rV[zp][1]*elab+para_rV[zp][2]*elab**2
-          +para_rV[zp][3]*AT**(-1./3.)    )
-    
-    
-    optical_pot_para={} 
-    return optical_pot_para 
+    Np = ap-zp
+    Nt = at-zt 
+    R_p = 1.20*ap**(1./3.)-0.09
+    R_t = 1.20*at**(1./3.)-0.09
+    Rbar = R_p*R_t/(R_p+R_t)
+    R0 = R_p + R_t
+    gamma = 0.95*(1.0-1.8*(Np-zp)/ap*(Nt-zt)/at    )
+    a_inv = 1.17*(1.0+0.53*(ap**(-1./3.)+at**(-1./3.)))
+    V0 = 16*np.pi*gamma*Rbar/a_inv  
+    return (V0,R0,1.0/a_inv) # (V>0,R,a) of WS potential 
 
 
 #=======================================================================
@@ -863,3 +833,10 @@ if __name__ == '__main__':
        if (len(out[0,:])==3):
           np.savetxt(ll,out,fmt=['%15.6E','%15.6E','%15.6E'])
    print('Bye~~') 
+
+
+       
+      
+
+
+

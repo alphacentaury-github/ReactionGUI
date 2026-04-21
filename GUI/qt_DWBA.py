@@ -4,44 +4,44 @@ Created on Fri May 29 14:13:34 2020
 
 @author: Y.-H. Song
 !***********************************************************************
-!     
+!
 !    Copyright (c) 2020, ReactionGUI GUI for reaction calculation
-!                        Produced at Rare Isotope Science Project 
-!                        Written by Young-Ho Song, yhsong@ibs.re.kr 
-!                               and Ik-Jae Shin,  geniean@ibs.re.kr 
+!                        Produced at Rare Isotope Science Project
+!                        Written by Young-Ho Song, yhsong@ibs.re.kr
+!                               and Ik-Jae Shin,  geniean@ibs.re.kr
 !                        All rights reserved.
-!          
+!
 !    This file is part of ReactionGUI.
 !
 !    ReactionGUI is free software: you can redistribute it and/or modify it
 !    under the terms of the GNU General Public License as published by
 !    the Free Software Foundation, either version 3 of the License, or
 !    (at your option) any later version.
-!     
+!
 !    ReactionGUI is distributed in the hope that it will be useful, but
 !    WITHOUT ANY WARRANTY; without even the implied warranty of
 !    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 !    GNU General Public License for more details.
-!     
+!
 !    You should have received a copy of the GNU General Public License
 !    along with FRESCO. If not, see <http://www.gnu.org/licenses/>.
-!     
+!
 !    OUR NOTICE AND TERMS AND CONDITIONS OF THE GNU GENERAL PUBLIC
 !    LICENSE
-!     
+!
 !    Our Preamble Notice
 !
-!      A. This work was produced at the Rare Isotope Science Project 
-!         of Institute for Basic Science, 
-!         funded by Ministry of Science and ICT and 
+!      A. This work was produced at the Rare Isotope Science Project
+!         of Institute for Basic Science,
+!         funded by Ministry of Science and ICT and
 !         by National Research Foundation of Korea (2013M7A1A1075764).
-!      B. Neither the Rare Isotope Science Project nor any of their employees, 
+!      B. Neither the Rare Isotope Science Project nor any of their employees,
 !         makes any warranty, express or implied, or assumes any liability or
 !         responsibility for the accuracy, completeness, or usefulness
 !         of any information, apparatus, product, or process disclosed,
 !         or represents that its use would not infringe privately-owned
 !         rights.
-!        
+!
 !***********************************************************************
 """
 import sys
@@ -62,6 +62,7 @@ from PyQt5.QtWidgets import (QApplication,QMainWindow,
                              QRadioButton)
 from PyQt5 import (uic,QtCore)
 from PyQt5.QtCore import (QUrl,QSize)
+from PyQt5.Qt import (QButtonGroup) 
 
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import (
@@ -85,7 +86,10 @@ import run_fresco_v2
 #import fresco_gui_rc
 from DoubleFolding.qt_DFOLD_dialog import DialogDFOLD_GUI
 from qt_omp_dialog import DialogOMP_GUI
+import qt_momdis
+import qt_ccfull
 
+import webbrowser
 
 #html_head = """
 #            <html><head>
@@ -95,6 +99,15 @@ from qt_omp_dialog import DialogOMP_GUI
 #             <body>
 #             """
 #html_tail =  "</body></html>"
+
+
+list_of_reactions = ['Elastic',
+                     'Inelastic-target-ex',
+                     'Inelastic-proj-ex',
+                     'Transfer',
+                     'radiative-capture',
+                     'Fusion',
+                     'nucleon knockout']
 
 #------------------------------------------------------------------
 class enter_nuclei(QWidget,):
@@ -213,13 +226,7 @@ class Partition_GUI(QWidget,):
         super().__init__()
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
-        self.list_of_reactions = ['Elastic',
-                                'Inelastic-target-ex',
-                                'Inelastic-proj-ex',
-                                'Transfer',
-                                'radiative-capture',
-                                'Fusion',
-                                'nucleon knockout']
+        
         #----Entrance channel
         self.Widget_proj = enter_nuclei(label_txt='Proj',nuc_name='2H')
         self.Widget_targ = enter_nuclei(label_txt='Targ',nuc_name='12C')
@@ -229,7 +236,7 @@ class Partition_GUI(QWidget,):
         self.comboBox_en_type = QComboBox()
         self.comboBox_en_type.addItems(['ELab','E/A','Ecm'])
         self.comboBox_reaction = QComboBox()
-        self.comboBox_reaction.addItems(self.list_of_reactions)
+        self.comboBox_reaction.addItems(list_of_reactions)
         self.Widgets_reaction = combined_Widgets_horizontal(
             [ QLabel('Energy(MeV)'),
               self.lineEdit_energy,
@@ -272,7 +279,7 @@ class Partition_GUI(QWidget,):
 
     def select_reaction(self,):
         reaction_index = self.comboBox_reaction.currentIndex()
-        self.status_label.setText(self.list_of_reactions[reaction_index]
+        self.status_label.setText(list_of_reactions[reaction_index]
                                      +' reaction is chosen')
         try: # remove previous Widgets
             self.layout.removeWidget(self.Widget_qval) #always
@@ -289,7 +296,7 @@ class Partition_GUI(QWidget,):
             self.Widget_heavy.setParent(None)
         except:
             pass
-        #----add Widgets to layout according to reaction choice        
+        #----add Widgets to layout according to reaction choice
         if reaction_index == 0:
             self.layout.addWidget(self.Widget_qval)
         elif reaction_index in [1,2]:
@@ -306,26 +313,40 @@ class Partition_GUI(QWidget,):
             out = self.Widget_targ.get_values()
             self.Widget_heavy.lineEdit.setText(out['name'])
             self.Widget_heavy.name_entered()
-        elif self.list_of_reactions[reaction_index]=='Fusion':
-            import qt_ccfull
+        elif list_of_reactions[reaction_index]=='Fusion':
             proj_data = self.Widget_proj.get_values()
-            targ_data = self.Widget_targ.get_values()  
+            targ_data = self.Widget_targ.get_values()
             my_window = qt_ccfull.CCFULL_GUI(ap=proj_data['A'],
                  zp=proj_data['Z'],
                  at=targ_data['A'],zt=targ_data['Z'],
                  enrange=(55.0,72.0,1.0),
                  ccfull_directory ='Hagino_CCfull/',
-                 default_values=False)
-            my_window.show() 
-        elif self.list_of_reactions[reaction_index]=='nucleon knockout':
-            import qt_momdis
+                 default_values=True)
+            my_window.show()
+        elif list_of_reactions[reaction_index]=='nucleon knockout':
             my_window = qt_momdis.momdis_GUI()
             my_window.show()
-        elif self.list_of_reactions[reaction_index]=='radiative-capture':
-            self.status_label.setText(self.list_of_reactions[reaction_index]
-                                     +' reaction is not available yet')         
+        elif list_of_reactions[reaction_index]=='radiative-capture':
+            # only radiative capture of nucleon !  
+            proj_data = self.Widget_proj.get_values()
+            targ_data = self.Widget_targ.get_values()
+            if proj_data['A'] == 1 :
+                self.layout.addWidget(self.Widget_light)
+                self.Widget_light.lineEdit.setText('Gamma')
+                self.Widget_light.name_entered()
+                self.layout.addWidget(self.Widget_heavy)
+                at = targ_data['A']+proj_data['A']
+                zt = targ_data['Z']+proj_data['Z']
+                out = reactions.read_nuclei(at,zt)
+                self.Widget_heavy.lineEdit.setText(out['name'])
+                self.Widget_heavy.name_entered() 
+                self.layout.addWidget(self.Widget_qval)
+                self.get_Q()
+            else:     
+                self.status_label.setText(list_of_reactions[reaction_index]
+                        +' reaction is only available for nucleon capture')
         else :
-            self.status_label.setText(self.list_of_reactions[reaction_index]
+            self.status_label.setText(list_of_reactions[reaction_index]
                                      +' reaction is not available yet')
 
     def get_Q(self,):
@@ -333,7 +354,6 @@ class Partition_GUI(QWidget,):
         proj_data = self.Widget_proj.get_values()
         targ_data = self.Widget_targ.get_values()
         reaction_index = self.comboBox_reaction.currentIndex()
-
         if reaction_index == 0: # Elastic
             self.lineEdit_qval.setText('0.0')
         elif reaction_index == 1 : #target excited
@@ -357,19 +377,35 @@ class Partition_GUI(QWidget,):
                 self.lineEdit_qval.setText('{:.6}'.format(Q ))
             except:
                 self.lineEdit_qval.setText('')
+        elif list_of_reactions[reaction_index]=='radiative-capture':
+            light_data = self.Widget_light.get_values()
+            heavy_data = self.Widget_heavy.get_values()
+            try:
+                Q = reactions.get_Qvalue(
+                    proj_data['A'],proj_data['Z'],proj_data['Ex'],
+                    targ_data['A'],targ_data['Z'],targ_data['Ex'],
+                    light_data['A'],light_data['Z'],light_data['Ex'],
+                    heavy_data['A'],heavy_data['Z'],heavy_data['Ex']
+                    )
+                self.lineEdit_qval.setText('{:.6}'.format(Q ))
+            except:
+                self.lineEdit_qval.setText('')
+        else: 
+            self.status_label.setText('Error: cannot obtain Q-value')    
 
     def get_kinematics(self,):
         data = self.get_values()
         output=''
+        reaction_index=data['reaction']['type']
 
-        if data['reaction']['type']== 0 : # Elastic
+        if reaction_index== 0 : # Elastic
             output = reactions.kin2(data['proj']['A'],
                                 data['proj']['Z'],
                                 data['targ']['A'],
                                 data['targ']['Z'],
                                 data['reaction']['energy']['E'],
                                 EN_type=data['reaction']['energy']['En_type'])
-        elif data['reaction']['type']== 1 : #target excit
+        elif reaction_index== 1 : #target excit
             output = reactions.kin2(data['proj']['A'],
                                 data['proj']['Z'],
                                 data['targ']['A'],
@@ -378,7 +414,7 @@ class Partition_GUI(QWidget,):
                                 EN_type=data['reaction']['energy']['En_type'],
                                 EXR=data['excited']['Ex']
                                 )
-        elif data['reaction']['type']== 2 : #project exit
+        elif reaction_index== 2 : #project exit
             output = reactions.kin2(data['proj']['A'],
                                 data['proj']['Z'],
                                 data['targ']['A'],
@@ -387,7 +423,7 @@ class Partition_GUI(QWidget,):
                                 EN_type=data['reaction']['energy']['En_type'],
                                 EXX=data['excited']['Ex']
                                 )
-        elif data['reaction']['type']== 3 : # transfer
+        elif reaction_index== 3 : # transfer
             output = reactions.kin2(data['proj']['A'],
                                 data['proj']['Z'],
                                 data['targ']['A'],
@@ -403,7 +439,9 @@ class Partition_GUI(QWidget,):
                                 EXX= data['light']['Ex'],
                                 EXR= data['heavy']['Ex'] )
         else:
-            print('Error: not available yet ')
+            output= ('Error: kinematics of '
+                     +list_of_reactions[reaction_index]
+                     +' reaction is not available yet')
         # show result in Dialog
         dlg = about_Dialog(label_text=output,text_type='text')
         dlg.exec_()
@@ -448,21 +486,22 @@ class Partition_GUI(QWidget,):
         self.data['reaction']['energy'] = {
                       'E': float(self.lineEdit_energy.text()),
                       'En_type':  self.comboBox_en_type.currentIndex()}
-        if self.comboBox_reaction.currentIndex()==0:
+        reaction_index = self.comboBox_reaction.currentIndex()
+        if reaction_index==0:
             self.data['reaction']['type'] =(
                 self.comboBox_reaction.currentIndex() )
-        elif self.comboBox_reaction.currentIndex() in [1,2]:
+        elif reaction_index in [1,2]:
             excit_data = self.Widget_excited.get_values()
             #---Note that excit_data does not have proper info
             #    except 'J_P' and 'Ex'
-            if self.comboBox_reaction.currentIndex()==1:
+            if reaction_index==1:
                 excit_data['name'] = self.data['targ']['name']
                 excit_data['mass'] = self.data['targ']['mass']
                 excit_data['A'],excit_data['Z'] = reactions.interp_nuclei_name(
                                                           excit_data['name'])
                 excit_data['J'],excit_data['P'] = reactions.interp_spin_name(
                                                             excit_data['J_P'])
-            elif self.comboBox_reaction.currentIndex()==2:
+            elif reaction_index==2:
                 excit_data['name'] = self.data['proj']['name']
                 excit_data['mass'] = self.data['proj']['mass']
                 excit_data['A'],excit_data['Z'] = reactions.interp_nuclei_name(
@@ -471,12 +510,22 @@ class Partition_GUI(QWidget,):
                                                             excit_data['J_P'])
             self.data['reaction']['type'] = self.comboBox_reaction.currentIndex()
             self.data['excited'] = excit_data
-        elif self.comboBox_reaction.currentIndex()==3:
+        elif reaction_index==3:
             light_data = self.Widget_light.get_values()
             heavy_data = self.Widget_heavy.get_values()
             self.data['reaction']['type'] = self.comboBox_reaction.currentIndex()
             self.data['light'] = light_data
             self.data['heavy'] = heavy_data
+        elif list_of_reactions[reaction_index]=='radiative-capture': 
+            light_data = self.Widget_light.get_values()
+            heavy_data = self.Widget_heavy.get_values()
+            self.data['reaction']['type'] = self.comboBox_reaction.currentIndex()
+            self.data['light'] = light_data
+            self.data['heavy'] = heavy_data       
+        else:
+            self.status_label.setText('Error in reading values')
+            print('Error: unknown get_values()')
+            return 
         self.data['reaction']['Q'] = float(self.lineEdit_qval.text() )
         return self.data
 
@@ -493,13 +542,20 @@ class Partition_GUI(QWidget,):
         self.comboBox_en_type.setCurrentIndex(
                                      data['reaction']['energy']['En_type'])
         self.comboBox_reaction.setCurrentIndex( data['reaction']['type'] )
-        if data['reaction']['type']==1:
+        reaction_index = data['reaction']['type']
+        if reaction_index==1:
             self.Widget_excited.put_values( data['excited'])
-        elif data['reaction']['type']==2:
+        elif reaction_index==2:
             self.Widget_excited.put_values( data['excited'])
-        elif data['reaction']['type']==3:
+        elif reaction_index==3:
             self.Widget_light.put_values(data['light'])
             self.Widget_heavy.put_values(data['heavy'])
+        elif list_of_reactions[reaction_index]=='radiative-capture':     
+            self.Widget_light.put_values(data['light'])
+            self.Widget_heavy.put_values(data['heavy'])
+        else:
+            self.status_label.setText('Error in putting values')
+            
         self.lineEdit_qval.setText(str(data['reaction']['Q']))
 
 #------------------------------------------------------------------------------
@@ -519,11 +575,6 @@ class Structure_Model_GUI(QWidget,):
         super().__init__()
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
-
-        self.list_of_reactions = ['Elastic',
-                                'Inelastic-target-ex',
-                                'Inelastic-proj-ex',
-                                'Transfer']
         self.partition_info = partition_info
         self.combo_model_index_old=0
         #----either use QTextBrowser or QWebEngineView
@@ -544,9 +595,20 @@ class Structure_Model_GUI(QWidget,):
         unicode_Delta = '\u0394'
         unicode_beta = '\u03B2'
         self.lineEdit_L_transfer = QLineEdit('0')
+        self.lineEdit_L_transfer.setToolTip(
+            unicode_Delta+'L ='+"transferred angular momentum \n "
+            +'Difference in J by excitation'
+            )
         self.lineEdit_L_transfer.editingFinished.connect(self.check_L_transfer)
         self.lineEdit_Coul_def_length = QLineEdit('0.0')
+        self.lineEdit_Coul_def_length.setToolTip(
+            'Coulomb '+unicode_beta+'L' +'= Coulomb deformation parameter\n'
+            +'Coulmb and Nuclear deformation can be different'
+            )
         self.lineEdit_Nuc_def_length = QLineEdit('0.0')
+        self.lineEdit_Nuc_def_length.setToolTip(
+            'Nuclear '+unicode_beta+'L' +'= Nuclear deformation parameter'
+            )
         self.rotor_model = combined_Widgets_horizontal([
                         QLabel(unicode_Delta+'L transfer'),
                         self.lineEdit_L_transfer,
@@ -570,11 +632,6 @@ class Structure_Model_GUI(QWidget,):
         self.lineEdit_ex_be = QLineEdit('0')
         self.gs_lj_recommend = QLabel('')
         self.ex_lj_recommend = QLabel('')
-        # check lj
-#        self.lineEdit_gs_l.editingFinished.connect(lambda: self.check_lj_bound('gs'))
-#        self.lineEdit_gs_j.editingFinished.connect(lambda: self.check_lj_bound('gs'))
-#        self.lineEdit_ex_l.editingFinished.connect(lambda: self.check_lj_bound('ex'))
-#        self.lineEdit_ex_j.editingFinished.connect(lambda: self.check_lj_bound('ex'))
 
         self.Widget_gs = combined_Widgets_horizontal([QLabel('ground state '),
                             QLabel('n'),self.lineEdit_gs_n,
@@ -622,21 +679,15 @@ class Structure_Model_GUI(QWidget,):
             ])
         self.proj_lj_recommend = QLabel('')
         self.targ_lj_recommend = QLabel('')
-
-#        self.Widget_proj_core.get_Widget(5).editingFinished.connect(
-#                                 lambda: self.generate_lj_bound('proj'))
-        # check lj
-#        self.Widget_proj_bound.get_Widget(4).editingFinished.connect(
-#                                 lambda: self.check_lj_bound('proj'))
-#        self.Widget_proj_bound.get_Widget(6).editingFinished.connect(
-#                                 lambda: self.check_lj_bound('proj'))
-#        self.Widget_targ_bound.get_Widget(4).editingFinished.connect(
-#                                 lambda: self.check_lj_bound('targ'))
-#        self.Widget_targ_bound.get_Widget(6).editingFinished.connect(
-#                                 lambda: self.check_lj_bound('targ'))
+        
+        self.button_group1 = QButtonGroup()
         self.radio_postform = QRadioButton('post form')
         self.radio_priorform = QRadioButton('prior form')
+        self.button_group1.addButton(self.radio_postform) 
+        self.button_group1.addButton(self.radio_priorform) 
         self.radio_postform.setChecked(True)
+        self.shell_model_help = QLabel('    ')
+        
         self.Widget_radios = combined_Widgets_horizontal(
             [QLabel('Transfer Coupling'),
              self.radio_postform,
@@ -651,10 +702,49 @@ class Structure_Model_GUI(QWidget,):
                                 self.Widget_proj_bound,
                                 self.proj_lj_recommend,
                                 self.Widget_targ_bound,
-                                self.targ_lj_recommend,
-                                self.Widget_radios
+                                self.targ_lj_recommend
             ])
-
+        
+        #----- radiative capture case
+        self.Widget_capture_valence = enter_nuclei(
+                                label_txt='captured nucleon',
+                                show_ex=False,nuc_type='fixed')
+        self.Widget_capture_core  = enter_nuclei(
+                                label_txt='Target Core     ',
+                                show_ex=False,nuc_type='fixed')
+        self.Widget_capture_bound = combined_Widgets_horizontal([
+                                 QLabel('Target Bound    '),
+                                 QLabel('n'),QLineEdit('1'),
+                                 QLabel('L'),QLineEdit('0'),
+                                 QLabel('j'),QLineEdit('0'),
+                                 QLabel('BE'),QLineEdit('0'),
+                                 QLabel('S.A.'),QLineEdit('1')
+            ])
+        self.combo_capture_EM = QComboBox()
+        unicode_lambda ='\u03BB'
+        self.combo_capture_EM.addItems(['E'+unicode_lambda+' and M'+unicode_lambda,
+                                    'E'+unicode_lambda+' only',
+                                    'M'+unicode_lambda+' only'])
+        self.capture_lambda = QLineEdit('0')
+        self.capture_lambda.setMaximumWidth(100)
+        self.capture_lambda_range = QCheckBox('incude smaller '+unicode_lambda)
+        self.Widget_capture_option = combined_Widgets_horizontal([ 
+             QLabel(unicode_lambda+'(Multipolarity)'),
+             self.capture_lambda,
+             self.capture_lambda_range, 
+             QLabel('EM transition'),
+             self.combo_capture_EM 
+            ] )
+        
+        self.capture_model = combined_Widgets_vertical([ 
+               QLabel('for radiative capture'),
+               self.Widget_capture_valence,
+               self.Widget_capture_core,
+               self.Widget_capture_bound,
+               self.Widget_capture_option
+            ] )
+        
+        #--- common status label 
         self.status_label = QLabel('')
 
     def set_partition_info(self,partition_info):
@@ -667,35 +757,13 @@ class Structure_Model_GUI(QWidget,):
                   self.partition_info['proj']['name'],
                   self.partition_info['proj']['name'],
                   self.partition_info['targ']['name'])
-            #----explanation texts--------
-            # self.reaction_txt = '<p> Choose the structure model for {}{} reaction.</p>'.format(
-            #     self.list_of_reactions[self.reaction_type], self.reaction_txt)
-
-            # self.reaction_txt += """
-            #                      <p> In general, the elastic scattering would
-            #                      be described with the optical potential. </p>
-            #                      <p> In the next step you will provide an optical potential.</p>
-            #                      <p> If the appropriate optical potential parameters are known,
-            #                      you can enter those values directly.
-            #                      Here several global optical potentials(OMP) are proposed
-            #                      for the reaction of interest.
-            #                      These global OMPs are originated from RIPL-3 library.
-            #                      <a href="https://www-nds.iaea.org/RIPL-3/">
-            #                      [https://www-nds.iaea.org/RIPL-3/]
-            #                      </a> </p>
-            #                      <p> Alternatively the optical potential may be calculated
-            #                      using a folding model.</p>
-            #                      <A href=https://www-nds.iaea.org/RIPL-3/>RIPL-3</A> library.
-            #                      \[U_{opt}(r)\]
-
-            #                      """
             with open("html/description_elastic.html", "r", encoding='utf-8') as f:
                 self.reaction_txt += f.read()
-                
+
             #pageSource = html_head+ self.reaction_txt + html_tail
             pageSource = self.reaction_txt
-            self.text_Browser.set_page_txt(pageSource,txt_type='html' )    
-            #self.text_Browser.set_page_txt(pageSource,txt_type='web' )    
+            self.text_Browser.set_page_txt(pageSource,txt_type='html' )
+            #self.text_Browser.set_page_txt(pageSource,txt_type='web' )
             #----available model list
             self.model_list = ['Optical Potential']
 
@@ -713,28 +781,13 @@ class Structure_Model_GUI(QWidget,):
                   self.partition_info['proj']['name'],
                   self.partition_info['proj']['name'],
                   self.partition_info['targ']['name'])
-            #----explanation texts--------
-            # self.reaction_txt = '<p>Choose structure model for {}{} reaction.</p>'.format(
-            #     self.list_of_reactions[self.reaction_type], self.reaction_txt)
-            # self.reaction_txt += """<p> In Rotor Model, treat the excitation as a rotation of a deformed nuclei.
-            #                         One have to specify the transferred orbital angular momentum and deformation.
-            #                         In general, Coulomb deformation and Nuclear deformation can be different.
-            #                         deformation length <mathjax>\(\delta_L\)</mathjax>
-            #                         is related with <mathjax>\(\beta_L\)</mathjax>
-            #                         and Radius,
-            #                         <mathjax>$$ \delta_{L} \simeq R\\times \\beta_L.$$ </mathjax>
-            #                         </p>  """
-            # self.reaction_txt += """ <p> In Cluster model, excitation is modeled
-            #                     as a change of s.p. energy level of a nuclei.
-            #                     One have to specify the core and valence particle
-            #                     and change in valence particle level.<p>"""
             with open("html/description_inelastic.html", "r", encoding='utf-8') as f:
                 self.reaction_txt += f.read()
-                
+
             #pageSource = html_head+ self.reaction_txt + html_tail
             pageSource = self.reaction_txt
-            self.text_Browser.set_page_txt(pageSource,txt_type='html' )  
-            #self.text_Browser.set_page_txt(pageSource,txt_type='web' )  
+            self.text_Browser.set_page_txt(pageSource,txt_type='html' )
+            #self.text_Browser.set_page_txt(pageSource,txt_type='web' )
 
             #-------------------------------------------------
             # self.model_list = ['Rotor model','Cluster model']
@@ -755,27 +808,13 @@ class Structure_Model_GUI(QWidget,):
                   self.partition_info['proj']['name'],
                   self.partition_info['targ']['name'])
 
-            # self.reaction_txt = '<p>Choose structure model for {}{} reaction.</p>'.format(
-            #     self.list_of_reactions[self.reaction_type], self.reaction_txt)
-            # self.reaction_txt += """<p> In Rotor Model, treat the excitation as a rotation of a deformed nuclei.
-            #                         One have to specify the transferred orbital angular momentum and deformation.
-            #                         In general, Coulomb deformation and Nuclear deformation can be different.
-            #                         deformation length <mathjax>\(\delta_L\)</mathjax>
-            #                         is related with <mathjax>\(\\beta_L\)</mathjax>
-            #                         and Raidus,
-            #                         <mathjax>$$\int_0^\infty \delta_{L} \simeq R\\times \\beta_L.$$ </mathjax>
-            #                         </p>  """
-            # self.reaction_txt += """ <p> In Cluster model, excitation is modeled
-            #                     as a change of s.p. energy level of a nuclei.
-            #                     One have to specify the core and valence particle
-            #                     and change in valence particle level.<p>"""
             with open("html/description_inelastic.html", "r", encoding='utf-8') as f:
                 self.reaction_txt += f.read()
-                
+
             #pageSource = html_head+ self.reaction_txt + html_tail
             pageSource = self.reaction_txt
-            self.text_Browser.set_page_txt(pageSource,txt_type='html' )                     
-            #self.text_Browser.set_page_txt(pageSource,txt_type='web' )                     
+            self.text_Browser.set_page_txt(pageSource,txt_type='html' )
+            #self.text_Browser.set_page_txt(pageSource,txt_type='web' )
 
             self.model_list = ['Rotor model','Cluster model']
             self.combo_model.currentIndexChanged.disconnect()
@@ -792,28 +831,35 @@ class Structure_Model_GUI(QWidget,):
                   self.partition_info['proj']['name'],
                   self.partition_info['light']['name'],
                   self.partition_info['heavy']['name'])
-            # self.reaction_txt = '<p> Choose structure model for {}{} reaction.</p>'.format(
-            #     self.list_of_reactions[self.reaction_type], self.reaction_txt)
-            # self.reaction_txt += """<p> For cluster model of transfer reaction,
-            #               transfer is considered as moving a valence cluster to/from target.
-            #               One needs Optical potential in entrance,exit channel,
-            #               potential between core1-valence,
-            #               potential between core2-valence,
-            #               potential between core1-core2 cluster,
-            #               and bound state informations in entrance,exit channel.</p>"""
             with open("html/description_transfer.html", "r", encoding='utf-8') as f:
                 self.reaction_txt += f.read()
-                
+
             #pageSource = html_head+ self.reaction_txt + html_tail
             pageSource = self.reaction_txt
-            self.text_Browser.set_page_txt(pageSource,txt_type='html' )                  
+            self.text_Browser.set_page_txt(pageSource,txt_type='html' )
             #self.text_Browser.set_page_txt(pageSource,txt_type='web' )
-                          
-                          
-                          
-            self.model_list = ['Finite range transfer without remnant correction',
-                               'Finite range transfer with remnant correction']
 
+            self.model_list = ['Finite range transfer without remnant correction',
+                               'Finite range transfer with remnant correction',
+                               'Zero range approximation']
+
+            self.combo_model.currentIndexChanged.disconnect()
+            self.combo_model.clear()
+            self.combo_model.addItems(self.model_list)
+            if self.combo_model_index_old < len(self.model_list ):
+                self.combo_model.setCurrentIndex(self.combo_model_index_old)
+            self.select_model()
+            self.combo_model.currentIndexChanged.connect(self.select_model)
+            
+        elif list_of_reactions[self.reaction_type]=='radiative-capture':
+            self.reaction_txt = '{}({},{}){}'.format(
+                  self.partition_info['targ']['name'],
+                  self.partition_info['proj']['name'],
+                  self.partition_info['light']['name'],
+                  self.partition_info['heavy']['name'])
+            pageSource = self.reaction_txt
+            self.text_Browser.set_page_txt(pageSource,txt_type='html' )
+            self.model_list = ['cluster model for capture']
             self.combo_model.currentIndexChanged.disconnect()
             self.combo_model.clear()
             self.combo_model.addItems(self.model_list)
@@ -834,13 +880,16 @@ class Structure_Model_GUI(QWidget,):
         try:
             reaction_type = self.partition_info['reaction']['type']
             #---remove previous Widgets---
-            list_of_widgets = [self.status_label,self.rotor_model,
+            list_of_widgets = [self.status_label,
+                               self.rotor_model,
                                self.inelastic_cluster_model,
-                               self.transfer_cluster_model]
+                               self.transfer_cluster_model,
+                               self.Widget_radios,
+                               self.capture_model]
             for i in list_of_widgets:
                 try:
                     self.layout.removeWidget(i)
-                    i.setParent(None)
+                    i.setParent(None) # reclaim widget for re-use 
                 except:
                     pass
             #--- add Widgets according to the selection
@@ -867,17 +916,45 @@ class Structure_Model_GUI(QWidget,):
             elif reaction_type==3 : # transfer
                 if current_model == 0:
                     self.layout.addWidget(self.transfer_cluster_model)
+                    self.layout.addWidget(self.Widget_radios)
                     self.fix_transfer_values()
                     self.layout.addWidget(self.status_label )
                     self.status_label.setText('')
                 elif current_model == 1:
                     self.layout.addWidget(self.transfer_cluster_model)
+                    self.layout.addWidget(self.Widget_radios)
                     self.fix_transfer_values()
                     self.layout.addWidget(self.status_label )
-                    self.status_label.setText('Not available yet.')
+                    self.status_label.setText('')
                 elif current_model == 2 : # ZR approximation
+                    self.layout.addWidget(self.transfer_cluster_model)
+                    self.zr_transf_D0 = QLineEdit('122.5')
+                    self.zr_transf_FNRNG = QLineEdit('0.0')
+                    self.zr_transfer_model = combined_Widgets_horizontal(
+                        [QLabel('D0(MeV fm^3/2)'),self.zr_transf_D0,
+                         QLabel('finite range parameter in LEA(fm)'),
+                         self.zr_transf_FNRNG ]
+                        )
+                    self.layout.addWidget(self.zr_transfer_model) 
+                    
                     self.layout.addWidget(self.status_label )
-                    self.status_label.setText('Not available yet.')
+                    self.status_label.setText('')
+                    
+                    
+            elif list_of_reactions[reaction_type]=='radiative-capture' :
+                if current_model ==0:
+                    self.layout.addWidget(self.capture_model) 
+                    #--fix capture model values 
+                    self.Widget_capture_core.lineEdit.setText(     
+                        self.partition_info['targ']['name'])
+                    self.Widget_capture_core.name_entered()
+                    txt = "{}+{} ".format(
+                        self.partition_info['proj']['name'],
+                        self.partition_info['targ']['name'])
+                    self.Widget_capture_bound.list_of_Widgets[0].setText(txt) 
+                    # determine recommended value of n, L, j for capture 
+                    self.layout.addWidget(self.status_label )
+                    self.status_label.setText('recommended value is not available yet')
             else:
                 print('Reaction is not available yet.')
         except:
@@ -984,7 +1061,10 @@ class Structure_Model_GUI(QWidget,):
             recommend_txt = "     The recommended value list for {} :".format(message_type)
             for ll in available_l_list :
                 recommend_txt += '\n          L = {}    and   its corresponding j = {}'.format(ll,lj_dic[ll])
-
+        #--shell model help 
+        recommend_txt +='\n\n  shell model conventions of n \n' \
+          +"|+ 2|-  8|+  20|-  40|+       70|-     112|+        168|\n| 1s| 1p|2s,1d|2p,1f|3s,2d,1g|3p,2f,1h|4s,3d,2g,1i|"
+                         
         return recommend_txt
 
     def get_quantum_number_list(self,JPbound,JPcore,JPval):
@@ -1121,16 +1201,6 @@ class Structure_Model_GUI(QWidget,):
                 self.partition_info['heavy']['J_P'],
                 transferred_val_JP)
             targ_l_list = list(targ_lj_dic.keys())
-#            targ_l = targ_l_list[0]
-#            targ_j = targ_lj_dic[targ_l][0]
-
-#        # to make a message
-#        if len(available_l_list) == 0:
-#                warning_txt = "It's wrong. There is no recommended value."
-#        else:
-#            warning_txt = "It's wrong. The recommended value list for {} is".format(message_type)
-#            for ll in available_l_list :
-#                warning_txt += '\n     L = {}    and   its corresponding j = {}'.format(ll,lj_dic[ll])
 
         self.Widget_transferred_valence.change_name(transferred_val_name)
         self.Widget_proj_core.change_name(coreP_name)
@@ -1140,10 +1210,6 @@ class Structure_Model_GUI(QWidget,):
             transferred_val_name,coreP_name) )
         self.Widget_targ_bound.get_Widget(0).setText('{}+{} bound'.format(
             transferred_val_name,coreT_name) )
-#        self.Widget_proj_bound.get_Widget(4).setText('{}'.format(proj_l))
-#        self.Widget_proj_bound.get_Widget(6).setText('{}'.format(proj_j))
-#        self.Widget_targ_bound.get_Widget(4).setText('{}'.format(targ_l))
-#        self.Widget_targ_bound.get_Widget(6).setText('{}'.format(targ_j))
         self.Widget_proj_bound.get_Widget(8).setText('{:.6}'.format(proj_BE))
         Proj_rec = self.generate_lj_bound('proj')
         self.proj_lj_recommend.setText(Proj_rec)
@@ -1232,8 +1298,29 @@ class Structure_Model_GUI(QWidget,):
                 self.data['valence'] = self.Widget_transferred_valence.get_values()
                 self.data['proj_core'] = self.Widget_proj_core.get_values()
                 self.data['targ_core'] = self.Widget_targ_core.get_values()
+                self.data['proj_bound_state'] = self.Widget_proj_bound.get_values()
+                self.data['proj_bound_state'][6] = str(myutil.frac2float(self.data['proj_bound_state'][6]))  ## fraction to string(float)
+                self.data['targ_bound_state'] = self.Widget_targ_bound.get_values()
+                self.data['targ_bound_state'][6] = str(myutil.frac2float(self.data['targ_bound_state'][6]))  ## fraction to string(float)
+                self.data['transfer_coupling'] =self.Widget_radios.get_values()
+                #self.data['zr_D0'] = self.zr_transf_D0 
+                #self.data['zr_FNRNG'] = self.zr_transf_FNRNG.  
+                
+                
                 return self.data
-
+        elif list_of_reactions[reaction_type]=='radiative-capture':
+            if current_model ==0 :
+                self.data['model'] = 'cluster'
+                self.data['current_model_index']=current_model
+                self.data['valence'] = self.Widget_capture_valence.get_values()
+                self.data['targ_core'] = self.Widget_capture_core.get_values()
+                self.data['targ_bound_state'] = self.Widget_capture_bound.get_values() 
+                self.data['rad_capture']=self.Widget_capture_option.get_values()
+                return self.data
+        else:
+            print('Error get_values in structure model')
+            self.status_label.setText('Error get_values in structure model')
+             
     def put_values(self,data):
         """
         inverse of get_values
@@ -1276,6 +1363,12 @@ class Structure_Model_GUI(QWidget,):
                 self.Widget_radios.put_values(data['transfer_coupling'])
             elif current_model==2:
                 print('not yet available')
+        elif list_of_reactions[reaction_type]=='radiative-capture':
+            if current_model ==0 :
+                self.Widget_capture_valence.put_values(data['valence'])
+                self.Widget_capture_core.put_values(data['targ_core'])
+                self.Widget_capture_bound.put_values(data['targ_bound_state']) 
+                self.Widget_capture_option.put_values(data['rad_capture'])        
 
 #==============================================================================
 class pot_term_GUI2(QWidget):
@@ -1623,6 +1716,7 @@ class potential_tab_GUI(QWidget,):
         self.Widget_Coul = pot_term_GUI2(type_index=0,shape_index=0,
                                     deform=deform,
                                     type_fixed=True,shape_fixed=True)
+        self.Widget_Coul.setToolTip("<img src= data/V_coulomb.png>" )
         self.button_clear = QPushButton('Reset')
         self.button_clear.clicked.connect(self.clear_pot)
         self.button_omp = QPushButton('Get Global OMP')
@@ -1637,11 +1731,13 @@ class potential_tab_GUI(QWidget,):
                                     disable_folding = disable_folding,
                                     complex_optical=complex_optical,
                                     external_folding_slot=self.get_folding)
+        self.Widget_Vol.setToolTip("<img src=data/V_volume.png>")
         self.Widget_Surf = pot_term_GUI2(type_index=2,shape_index=0,
                                     type_fixed=True,shape_fixed=False,
                                     deform=deform,
                                     disable_folding = disable_folding,
                                     complex_optical=complex_optical)
+        self.Widget_Surf.setToolTip("<img src=data/V_surface.png>")
         self.Widget_SO_p = pot_term_GUI2(type_index=3,shape_index=0,
                                     type_fixed=True,shape_fixed=False,
                                     deform=False,
@@ -1715,7 +1811,10 @@ class potential_tab_GUI(QWidget,):
             txt = txt+' binding. potential depth of vol term will be adjusted to binding energy.'
         self.status_label.setText(txt)
         #---set initial guess of ap,at
-        #self.Widget_Coul.set_paras([ap,at])
+        if ap < 4 : #?? 
+            self.Widget_Coul.set_paras([0,at])
+        else:
+            self.Widget_Coul.set_paras([ap,at])
 
         if self.deform :
              self.Widget_Coul.set_deform(Coulomb_deformation)
@@ -1891,7 +1990,7 @@ class potentials_GUI(QTabWidget,):
         en = partition_info['reaction']['energy']['E']
         en_type = partition_info['reaction']['energy']['En_type']
         #---------
-        if reaction_type ==0:
+        if reaction_type ==0: #elastic 
             AX = AP; ZX = ZP; MX = MP; JX = JP; PX = PP; EXX = EXP
             nameX = nameP
             AR = AT; ZR = ZT; MR = MT; JR = JT; PR = PT; EXR = EXT
@@ -2136,6 +2235,7 @@ class potentials_GUI(QTabWidget,):
                 summary['Targ']['Cluster']['st'] = {'n':NCV_T,'l':LCV_T,
                                                     'j':JCV_T,'BE':BECV_T,
                                                     'SA':SACV_T}
+            #-----trasnfer reaction model     
             if structure_info['current_model_index']==0:
                 if structure_info['transfer_coupling'][1]: # post form
                     summary['reaction']['transfer_coupling']= 'post'
@@ -2147,7 +2247,69 @@ class potentials_GUI(QTabWidget,):
                 else:
                     summary['reaction']['transfer_coupling']= 'prior'
             elif structure_info['current_model_index']==2:
+                
                 print('Not available yet')
+        elif list_of_reactions[reaction_type]=='radiative-capture':
+            # gather projectile-like target-like partition info 
+            AX = partition_info['light']['A']
+            ZX = partition_info['light']['Z']
+            nameX = partition_info['light']['name']
+            MX = partition_info['light']['mass']
+            JX = partition_info['light']['J']
+            PX = partition_info['light']['P']
+            EXX = partition_info['light']['Ex']
+            AR = partition_info['heavy']['A']
+            ZR = partition_info['heavy']['Z']
+            nameR = partition_info['heavy']['name']
+            MR = partition_info['heavy']['mass']
+            JR = partition_info['heavy']['J']
+            PR = partition_info['heavy']['P']
+            EXR = partition_info['heavy']['Ex']
+            summary['X'] = {'name':nameX,'A':AX,'Z':ZX,'mass':MX,
+                            'J':JX,'P':PX,'Ex':EXX}
+            summary['R'] ={'name':nameR,'A':AR,'Z':ZR,'mass':MR,
+                            'J':JR,'P':PR,'Ex':EXR}
+            (Qval,ELAB,EpA,ECM,ELABf,EpAf,ECMf) = reactions.kin2_simplified(
+                                        AP,ZP,AT,ZT,en,AX,ZX,AR,ZR,
+                                        EXP,EXT,EXX,EXR,en_type)
+            summary['reaction'] ={
+                'type':reaction_type,
+                'model': structure_info['model'],
+                'current_model_index': structure_info['current_model_index'],
+                'Q': Qval,'ELAB':ELAB,'EpA':EpA,'ECM':ECM,
+                'ELABf':ELABf,'EpAf':EpAf,'ECMf':ECMf}
+            AV = structure_info['valence']['A']
+            ZV = structure_info['valence']['Z']
+            MV = structure_info['valence']['mass']
+            JV = structure_info['valence']['J']
+            PV = structure_info['valence']['P']
+            nameV = structure_info['valence']['name']
+            
+            AC_T = structure_info['targ_core']['A']
+            ZC_T = structure_info['targ_core']['Z']
+            JC_T = structure_info['targ_core']['J']
+            PC_T = structure_info['targ_core']['P']
+            nameC_T = structure_info['targ_core']['name']
+            NCV_T = int(structure_info['targ_bound_state'][2])
+            LCV_T = int(structure_info['targ_bound_state'][4])
+            JCV_T = float(structure_info['targ_bound_state'][6])
+            BECV_T = float(structure_info['targ_bound_state'][8])
+            SACV_T = float(structure_info['targ_bound_state'][10])
+            summary['reaction']['transfer_type'] = 'stripping'
+            summary['R']['Cluster'] = {'V': {},'C':{},'st':{} }
+            summary['R']['Cluster']['V'] = summary['Proj']
+            summary['R']['Cluster']['C'] = summary['Targ']
+            summary['R']['Cluster']['st'] = {'n':NCV_T,'l':LCV_T,
+                                                 'j':JCV_T,'BE':BECV_T,
+                                                 'SA': SACV_T }            
+            if  structure_info['rad_capture'][2]:
+                IP1 = int(structure_info['rad_capture'][1])
+            else:
+                IP1 = -int(structure_info['rad_capture'][1])
+                
+            IP2 = structure_info['rad_capture'][4]    
+            summary['reaction']['radcap_coupling']={'multipole': IP1,
+                                                    'EM' : IP2}
         return summary
 
 
@@ -2407,7 +2569,26 @@ class potentials_GUI(QTabWidget,):
             elif reaction_model_index==2 : # ZRNG
                 print('reaction_model_index==2. No more work available')
                 pass
-
+        elif list_of_reactions[reaction_type]=='radiative-capture':
+            if reaction_model_index==0:
+                ax = interpreted_data['X']['A']
+                zx = interpreted_data['X']['Z']
+                ar = interpreted_data['R']['A']
+                zr = interpreted_data['R']['Z']
+                # entrance channel potential 
+                self.potential_entrance.change_option(
+                    complex_optical=True,deform=False,disable_folding=False)
+                self.potential_entrance.set_channel_info(ap, zp, at, zt, elab)
+                self.addTab(self.potential_entrance,'Entrance channel')
+                # exit channel
+                # binding 
+                self.potential_exit_binding.set_channel_info(
+                     ap-ax, zp-zx, at, zt,
+                     interpreted_data['R']['Cluster']['st']['BE']) # coreT +x binding
+                self.addTab(self.potential_exit_binding,
+                        'exit binding potential')
+                self.list_of_potentials=[self.potential_entrance,
+                                         self.potential_exit_binding] 
 
         return interpreted_data
 
@@ -2484,13 +2665,13 @@ class potentials_and_control(QWidget,):
                 partition_data,structure_data)
 
         self.layout.addWidget(self.potential_tabs)
-        #---scale factor         
+        #---scale factor
         self.LineEdit_scale = QLineEdit('1.0')
         self.LineEdit_scale.editingFinished.connect(self.re_draw)
         self.Widget_scale = combined_Widgets_horizontal(
             [QLabel('Scale factor'),self.LineEdit_scale]    )
         self.layout.addWidget(self.Widget_scale)
-        
+
         self.layout.addWidget(self.Widget_controls)
 
         self.Widget_text_plot = combined_Widgets_horizontal(
@@ -2525,7 +2706,7 @@ class potentials_and_control(QWidget,):
                  'P1': a1, 'P2': a2, 'P3': rc  })
             # Coulomb excitation
             if (reaction_type==1 and structure_model=='Rotor'
-                and itab=='entrance'):  #target excitation 
+                and itab=='entrance'):  #target excitation
                 L = self.interpreted_reaction['Targ']['Rotor']['L']
                 if raw_potential_inputs[itab]['Coul'][6]:
                     beta = raw_potential_inputs[itab]['Coul'][7]
@@ -2538,9 +2719,9 @@ class potentials_and_control(QWidget,):
                 #--need to get Mn(Ek)
                 zt = self.interpreted_reaction['Targ']['Z']
                 zp = self.interpreted_reaction['Proj']['Z']
-                # test R_c values 
+                # test R_c values
                 # radius = (a1**(1./3.)+a2**(1./3.))*rc # r_c(a1^1/3+a2^1/3)
-                radius = (a2**(1./3.))*rc               # target   
+                radius = (a2**(1./3.))*rc               # target
                 MnEk = 3.0*(zt*beta*radius**L)/(4.0*np.pi)
 
                 potentials[itab].append({'TYPE': 11,'SHAPE': 10,
@@ -2557,7 +2738,7 @@ class potentials_and_control(QWidget,):
                 else:
                     raise ValueError('Error: Monopole excitation is not available.')
                 zp = self.interpreted_reaction['Proj']['Z']
-                radius = (a1**(1./3.))*rc #projectile 
+                radius = (a1**(1./3.))*rc #projectile
                 MnEk = 3.0*(zp*beta*radius**L)/(4.0*np.pi)
 
                 potentials[itab].append({'TYPE': 10,'SHAPE': 10,
@@ -2749,7 +2930,7 @@ class potentials_and_control(QWidget,):
         self.fresco_input.potentials = run_fresco_v2.Fresco_Potentials()
         self.fresco_input.overlaps = run_fresco_v2.Fresco_Overlaps()
         self.fresco_input.couplings = run_fresco_v2.Fresco_Couplings()
-        
+
         #---list of plots
         self.list_of_data_to_plot = []
         self.Widget_plot.reset_plot()
@@ -2775,6 +2956,8 @@ class potentials_and_control(QWidget,):
             form_txt = '{}({},{}*){} at {} MeV'
         elif reaction_type==3:
             form_txt = '{}({},{}){} at {} MeV'
+        else :
+            form_txt = '{}({},{}){} at {} MeV'    
 
         title_txt = form_txt.format(
             self.interpreted_reaction['Targ']['name'],
@@ -2805,7 +2988,7 @@ class potentials_and_control(QWidget,):
               JT = self.interpreted_reaction['Targ']['J'],
               BANDT = self.interpreted_reaction['Targ']['P'],
               ET = self.interpreted_reaction['Targ']['Ex'])
-        # if inelastic case
+        # additional partition states
         if reaction_type==0:
             pass
         elif reaction_type==1 : # target excitation
@@ -2874,6 +3057,24 @@ class potentials_and_control(QWidget,):
                 BANDP = self.interpreted_reaction['X']['P'],
                 EP = self.interpreted_reaction['X']['Ex'],
                 CPOT = 2,
+                JT = self.interpreted_reaction['R']['J'],
+                BANDT = self.interpreted_reaction['R']['P'],
+                ET = self.interpreted_reaction['R']['Ex'])
+        elif list_of_reactions[reaction_type]=='radiative-capture':
+            self.fresco_input.partitions.add_partition(
+                NAMEP = self.interpreted_reaction['X']['name'],
+                MASSP = self.interpreted_reaction['X']['mass'],
+                ZP    = self.interpreted_reaction['X']['Z'],
+                NAMET = self.interpreted_reaction['R']['name'],
+                MASST = self.interpreted_reaction['R']['mass'],
+                ZT    = self.interpreted_reaction['R']['Z'],
+                QVAL  = self.interpreted_reaction['reaction']['Q'])
+            # for radiative capture exit potential is should not refer existing potential 
+            self.fresco_input.partitions.add_state(1,
+                JP = self.interpreted_reaction['X']['J'],
+                BANDP = self.interpreted_reaction['X']['P'],
+                EP = self.interpreted_reaction['X']['Ex'],
+                CPOT = 100,
                 JT = self.interpreted_reaction['R']['J'],
                 BANDT = self.interpreted_reaction['R']['P'],
                 ET = self.interpreted_reaction['R']['Ex'])
@@ -2955,6 +3156,12 @@ class potentials_and_control(QWidget,):
                 add_each_potential_to_fresco_input(kp5,4)
             elif structure_model_index==2: #with remnant
                 print('Not available')
+        elif list_of_reactions[reaction_type]=='radiative-capture':
+            if structure_model_index==0:
+                kp1 = self.interpreted_potentials['entrance']
+                kp2 = self.interpreted_potentials['exit_binding']
+                add_each_potential_to_fresco_input(kp1,0)
+                add_each_potential_to_fresco_input(kp2,1)
 
         #---------------------------
         # Prepare Overlaps
@@ -3046,6 +3253,18 @@ class potentials_and_control(QWidget,):
                     IA=1,IB=1,KBPOT= 4,
                     BE=self.interpreted_reaction['X']['Cluster']['st']['BE'],
                     ISC=1,IPC=0)
+        elif list_of_reactions[reaction_type]=='radiative-capture':
+                #---exit_binding
+                self.fresco_input.overlaps.add_overlap(
+                    KN1=1,IC1=1,IC2=2,IN=-2,KIND=0,
+                    NN=self.interpreted_reaction['R']['Cluster']['st']['n'] ,
+                    L=self.interpreted_reaction['R']['Cluster']['st']['l'],
+                    SN=self.interpreted_reaction['R']['Cluster']['V']['J'],
+                    J=self.interpreted_reaction['R']['Cluster']['st']['j'],
+                    IA=1,IB=1,KBPOT= 2,
+                    BE=self.interpreted_reaction['R']['Cluster']['st']['BE'],
+                    ISC=1,IPC=0)
+                
         #---------------------------
         # Prepare Couplings
         #---------------------------
@@ -3075,7 +3294,7 @@ class potentials_and_control(QWidget,):
                 elif transfer_coupling=='prior':
                     self.fresco_input.couplings.add_a_coupling(
                         KIND=7,ICTO=2,ICFROM=1,IP1=1,IP2=-1,IP3=5)
-            elif transfer_model_index==2:
+            elif transfer_model_index==2: #zero range coupling 
                 print('Need input for P1 and P2 ')
                 if transfer_coupling=='post':
                     self.fresco_input.couplings.add_a_coupling(
@@ -3099,6 +3318,17 @@ class potentials_and_control(QWidget,):
                                                     A=sa_entrance) #entrance
                 self.fresco_input.couplings.add_cfp(0,IN=1,IB=1,IA=1,KN=2,
                                                     A=sa_exit) #exit
+        elif list_of_reactions[reaction_type]=='radiative-capture':
+            ip1 = self.interpreted_reaction['reaction']['radcap_coupling']['multipole']
+            ip2 = self.interpreted_reaction['reaction']['radcap_coupling']['EM']
+            sa_exit = self.interpreted_reaction['R']['Cluster']['st']['SA']
+            self.fresco_input.couplings.add_a_coupling(
+                KIND=2,ICTO=2,ICFROM=1,IP1=ip1,IP2=ip2)
+            self.fresco_input.couplings.add_cfp(0,IN=2,IB=1,IA=1,KN=1,A=sa_exit)
+            
+        else:
+            print('Not available yet')
+                        
         self.Widget_text.clear()
         self.Widget_text.append(self.fresco_input.write())
 
@@ -3120,6 +3350,9 @@ class potentials_and_control(QWidget,):
         # check result
         if run_fresco_v2.chck_fresco_out(fname=fresco_frout)==0:
             self.Widget_text.append('Fresco run finished.\n' )
+            XSs=run_fresco_v2.read_fresco_totalXs()
+            self.Widget_text.append('Accumulated cross sections:\n')
+            self.Widget_text.append(f'reactionXS:{XSs[0]} totalXS:{XSs[1]} elasticXS:{XSs[2]} \n')
         else:
             self.Widget_text.append('Error in Fresco run.\n' )
             ff=open(fresco_frout,'r')
@@ -3153,8 +3386,8 @@ class potentials_and_control(QWidget,):
             scale_factor = float(self.LineEdit_scale.text())
         except:
             print('Error in scale factor')
-            scale_factor=1.0 
-            
+            scale_factor=1.0
+
         if reaction_type==0: # default plot is ratio ,linear
             self.combobox_ratio.setEnabled(True)
             self.button_fit_elastic.setEnabled(True)
@@ -3164,7 +3397,7 @@ class potentials_and_control(QWidget,):
                     self.current_plot = {'x': angle, 'y': ratio*scale_factor,
                                       'fmt':'-' ,'label':'Elastic'}
                     ylabel = 'ratio'
-                else : #neutral case 
+                else : #neutral case
                     self.current_plot = {'x': angle, 'y': ratio*scale_factor,
                     'fmt':'-' ,'label':'ratio un-defined for neutral particle!'}
                     ylabel = 'ratio'
@@ -3238,13 +3471,13 @@ class potentials_and_control(QWidget,):
             scale_factor = float(self.LineEdit_scale.text())
         except:
             print('Error in scale factor')
-            scale_factor=1.0 
-            
+            scale_factor=1.0
+
         if reaction_type==0: # default plot is ratio ,linear
             neutral_case=( self.interpreted_reaction['Proj']['Z']
-                     *self.interpreted_reaction['Targ']['Z'] ) 
+                     *self.interpreted_reaction['Targ']['Z'] )
             if self.combobox_ratio.currentIndex()==0:
-                if neutral_case > 0: 
+                if neutral_case > 0:
                     self.current_plot = {'x': self.fresco_results[0][:,0],
                                       'y': self.fresco_results[0][:,2]*scale_factor,
                                       'fmt':'-' ,'label':'Elastic'}
@@ -3260,10 +3493,10 @@ class potentials_and_control(QWidget,):
                                       'fmt':'-' ,'label':'Elastic'}
                 ylabel = 'mb/sr'
 
-            if len(self.list_of_data_to_plot) > 0:    
+            if len(self.list_of_data_to_plot) > 0:
                 self.list_of_data_to_plot[0] = self.current_plot
-            else: #empty 
-                self.list_of_data_to_plot.append( self.current_plot) 
+            else: #empty
+                self.list_of_data_to_plot.append( self.current_plot)
 
             if self.combobox_scale.currentIndex() == 0 :
                 yscale = 'linear'
@@ -3373,7 +3606,7 @@ class potentials_and_control(QWidget,):
                     "",
                     "All Files (*)",
                     options=options)
-        if fileName : 
+        if fileName :
             print('Save Results to {}'.format(fileName))
             #---write to fileName
             txt = '# Elastic channel \n'
@@ -3481,10 +3714,10 @@ class TestToolBox(QToolBox,):
         if current_index == 0 :
             #do something?
             pass
-        elif current_index == 1 :
+        elif current_index == 1 : #model tab
             partition_data = self.partition.get_values()
             self.model.set_partition_info(partition_data)
-        elif current_index == 2:
+        elif current_index == 2: #potential
             partition_data = self.partition.get_values()
             structure_data = self.model.get_values()
             self.pot_control_plot.set_partition_structure_info(
@@ -3534,7 +3767,7 @@ class TestToolBox(QToolBox,):
         #jj = json.dumps(para_dict,indent=2)
         #ff = open(fileName,'w')
         #ff.write(jj)
-        #ff.close() 
+        #ff.close()
         #>> or pickle
         ff= open(fileName,'wb')
         pickle.dump(para_dict,ff)
@@ -3572,7 +3805,7 @@ class MyWindow(QMainWindow, uic.loadUiType("main_window.ui")[0]):
         self.setupUi(self)
         size = QSize(750,700)
         self.resize(size)
-        self.setWindowTitle('GIRL: Gui for Intuitive Reaction Learning')
+        self.setWindowTitle('ReactionGUI: Gui for Intuitive Reaction Learning')
         # data for main window
         self.path_data = myutil.all_global_variables()
         self.load_path_info()
@@ -3585,13 +3818,14 @@ class MyWindow(QMainWindow, uic.loadUiType("main_window.ui")[0]):
         self.actionAbout.triggered.connect(self.show_about)
         self.actionDocumentation.triggered.connect(self.show_documents)
         self.actionBug_Report.triggered.connect(self.show_bugreport)
+        self.actionOpen_EXFOR.triggered.connect(lambda: webbrowser.open('https://www-nds.iaea.org/exfor/'))  
         #---add Widgets
         self.DWBA = TestToolBox()
         self.verticalLayout.addWidget(self.DWBA)
-        
+
     def show_documents(self,):
         external_web_browser(url ='https://github.com/alphacentaury-github/ReactionGUI')
-        
+
     def show_bugreport(self,):
         external_web_browser(url ='https://github.com/alphacentaury-github/ReactionGUI/issues')
 
@@ -3632,15 +3866,15 @@ class MyWindow(QMainWindow, uic.loadUiType("main_window.ui")[0]):
                     options=options)
         para_dict   = self.DWBA.save_para()
         if fileName:
-            #>> pickle 
+            #>> pickle
             ff= open(fileName,'wb')
             pickle.dump(para_dict,ff)
             ff.close()
-            #>> json 
+            #>> json
             #jj = json.dumps(para_dict,indent=2)
             #ff = open(fileName,'w')
             #ff.write(jj)
-            #ff.close() 
+            #ff.close()
             return para_dict
         else :
             print('No file is chosen')
@@ -3663,12 +3897,12 @@ class MyWindow(QMainWindow, uic.loadUiType("main_window.ui")[0]):
             ff= open(fileName,'rb')
             para_dict = pickle.load(ff)
             ff.close()
-            #>> using json 
+            #>> using json
             #ff = open(fileName,'r')
             #jj = ff.read()
             #ff.close()
             #para_dict = json.loads(jj) # convert string to dictionary
-        
+
             self.DWBA.load_para(para_dict)
             self.DWBA.setCurrentIndex(0)
             self.DWBA.setCurrentIndex(1)
@@ -3684,11 +3918,11 @@ class MyWindow(QMainWindow, uic.loadUiType("main_window.ui")[0]):
         dlg.exec_()
         return
 #-----external webbrowser
-def external_web_browser(url = 'html\description_transfer.html'):
-    # open html file in external web-browser. 
+def external_web_browser(url = "html/description_transfer.html"):
+    # open html file in external web-browser.
     import webbrowser
     webbrowser.open(url,new=2)
-    return 
+    return
 
 
 #============================================================================
@@ -3706,6 +3940,6 @@ if __name__ == "__main__":
         #myWindow = TestToolBox()
         myWindow = MyWindow()
         myWindow.show()
-        #sys.exit(app.exec_() )
+        sys.exit(app.exec_() )
         return myWindow
     m = run_app()

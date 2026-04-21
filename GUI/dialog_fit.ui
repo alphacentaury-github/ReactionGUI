@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>334</height>
+    <width>441</width>
+    <height>399</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,59 +23,10 @@
    </item>
    <item>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="0">
-      <widget class="QCheckBox" name="checkBox_Wd">
-       <property name="text">
-        <string>WD</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QCheckBox" name="checkBox_W0">
-       <property name="text">
-        <string>W0</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QCheckBox" name="checkBox_V0">
-       <property name="text">
-        <string>V0</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QCheckBox" name="checkBox_aw">
-       <property name="text">
-        <string>aw</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QCheckBox" name="checkBox_a0">
-       <property name="text">
-        <string>a0</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="1">
       <widget class="QCheckBox" name="checkBox_rw">
        <property name="text">
         <string>rw</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QCheckBox" name="checkBox_rwd">
-       <property name="text">
-        <string>rwd</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QCheckBox" name="checkBox_awd">
-       <property name="text">
-        <string>awd</string>
        </property>
       </widget>
      </item>
@@ -86,10 +37,66 @@
        </property>
       </widget>
      </item>
+     <item row="6" column="0">
+      <widget class="QCheckBox" name="checkBox_DF_W0">
+       <property name="text">
+        <string>DF W0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QCheckBox" name="checkBox_aw">
+       <property name="text">
+        <string>aw</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QCheckBox" name="checkBox_rwd">
+       <property name="text">
+        <string>rwd</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QCheckBox" name="checkBox_DF_rw">
+       <property name="text">
+        <string>DF rw</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QCheckBox" name="checkBox_awd">
+       <property name="text">
+        <string>awd</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QCheckBox" name="checkBox_aso">
+       <property name="text">
+        <string>aso</string>
+       </property>
+      </widget>
+     </item>
      <item row="3" column="0">
       <widget class="QCheckBox" name="checkBox_Vso">
        <property name="text">
         <string>Vso</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QCheckBox" name="checkBox_DF_NR">
+       <property name="text">
+        <string>DF NR</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QCheckBox" name="checkBox_a0">
+       <property name="text">
+        <string>a0</string>
        </property>
       </widget>
      </item>
@@ -100,10 +107,45 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="2">
-      <widget class="QCheckBox" name="checkBox_aso">
+     <item row="0" column="0">
+      <widget class="QCheckBox" name="checkBox_V0">
        <property name="text">
-        <string>aso</string>
+        <string>V0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QCheckBox" name="checkBox_W0">
+       <property name="text">
+        <string>W0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QCheckBox" name="checkBox_DF_NI">
+       <property name="text">
+        <string>DF NI</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QCheckBox" name="checkBox_Wd">
+       <property name="text">
+        <string>WD</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QCheckBox" name="checkBox_DF_aw">
+       <property name="text">
+        <string>DF aw</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>

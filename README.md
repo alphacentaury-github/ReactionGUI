@@ -3,8 +3,6 @@ GUI for easy and intuitive reaction calculation
 
 Written by Y.-H. Song(yhsong@ibs.re.kr), I.J. Shin(geniean@ibs.re.kr)
 
-2021-03-03. added GUI for fusion(CCFULL) and knockout(MOMDIS) reaction
-
 2020-11-06. first version
     
 ## Requirements

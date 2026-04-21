@@ -51,6 +51,7 @@ import re
 import os 
 from io import StringIO
 import pickle 
+import json
 
 hc=197.3269 # MeV fm
 amu=931.494 #MeV
@@ -102,6 +103,27 @@ class all_global_variables() :
         all_global_variables.class_property = para_dict 
         return para_dict 
                 
+class dict_files():    
+    """more general purpose. assume simple text {key:value} """
+    def __init__(self,**kwarg):
+        self.data = {} 
+        for item,value in kwarg.items():
+            self.data[item] = value            
+    def put_values(self,**kwarg):
+        for item,value in kwarg.items():
+            self.data[item] = value 
+        return     
+    def save_to_file(self,file_name='.pikoe_gui'):
+        with open(file_name,'w') as file:
+            json.dump(self.data,file,indent=4)
+    def load_from_file(self,file_name='.pikoe_gui'):
+        with open(file_name,'r') as file:
+            self.data = json.load(file)
+        return self.data     
+         
+        
+        
+        
 #---------------------------------------------------------------------
 def gauleg(a,b,n):
     """
@@ -205,14 +227,21 @@ def convert_table(fname,x_range,fill_value=None):
 
 def txt_to_array(text):
     # text table into array 
-    ff= StringIO(text)
-    array = np.loadtxt(ff)
+    try:
+        ff= StringIO(text)
+        array = np.loadtxt(ff)
+    except:
+        print('Error in txt_to_array')
+        array = None 
     return array 
 
 def array_to_txt(array):
-    ff = StringIO()
-    np.savetxt(ff,array)
-    return ff.getvalue() 
+    try:
+        ff = StringIO()
+        np.savetxt(ff,array)
+        return ff.getvalue() 
+    except:
+        print('Error in array_to_txt')
 
 def add_error_to_datatext(text):
     """
@@ -235,7 +264,7 @@ def add_error_to_datatext(text):
             if len(line)==0:
                 continue 
             if line[0]!='#' : # data line 
-                new_text = new_text+line+' 0.001\n' 
+                new_text = new_text+line+' 0.01\n' 
             else:
                 new_text = new_text+line+'\n'
         text = new_text         
@@ -409,15 +438,22 @@ def read_fresco_res(fname):
   out={}
   j=0
   ll=[]
-  for i in lines:
-    w=i.split()
+  for ii in lines:
+    w=ii.split()
     if len(w)!=0 and (w[0][0] in ['#','!']):
       continue
     if len(w)!=0 :
-      ll.append([ float(k) for k in w])
+      temp=[]  
+      for k in w:  
+          if k[0]=='#':
+              break 
+          else:
+              temp.append(float(k))
+      ll.append(temp)        
+      #ll.append([ float(k) for k in w])
     if len(w)==0 and len(ll)==0 : # continuos blank
       continue
-    if (len(w)==0 and len(ll)!=0) or (i ==lines[-1]): #if met blank, it means end of data
+    if (len(w)==0 and len(ll)!=0) or (ii ==lines[-1]): #if met blank, it means end of data
       out[j]=ll[:]
       j=j+1
       ll=[]

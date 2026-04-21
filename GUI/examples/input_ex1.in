@@ -1,0 +1,18 @@
+example of p+112Cd elastic scattering
+NAMELIST
+&FRESCO hcm=0.100 rmatch=  20.000 jtmin=0.0 
+	 jtmax= 200.000 absend=0.0010       
+	 thmin =    0.000 thmax= 180.000 thinc=   1.000  chans=1    
+	 smats=2  xstabl=2                              
+	 elab=   27.900                                       
+ 	 /                                              
+  &PARTITION namep='proj'    massp=1.000000 zp=1 
+	          namet='target'  masst=112.000000 zt=48 qval=-0.000 nex=1  /
+ &STATES jp=0.500000 bandp=1 cpot=1 jt=0.000000 bandt=1 /
+ &partition /                                               
+   &POT kp=1 ap=0.000000 at=112.000000 rc=1.200000  / 
+  &POT kp=1 type=1 p1=52.500000 p2=1.170000 p3=0.750000  
+	                 p4=3.500000 p5=1.320000 p6=0.610000  /
+ &pot /   
+ &overlap / 
+ &coupling /  

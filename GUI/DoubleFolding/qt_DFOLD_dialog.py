@@ -13,7 +13,6 @@ except:
     here = '.'
 sys.path.insert(0,here) # to import DFPot3 in this directory 
 
-
 from PyQt5.QtWidgets import (QApplication,QMainWindow,QDialog,QFileDialog
                              ,QWidget,QComboBox,QVBoxLayout,QLineEdit,QFormLayout)
  
@@ -69,6 +68,11 @@ class ChooseDensity(QWidget):
         self.layout.addWidget(self.comboBox)
         self.comboBox.addItems(item_list) 
         self.comboBox.currentIndexChanged.connect(self.change_form) 
+        
+    def change_nuclei(self,A,Z,charge):
+        self.A = A
+        self.Z = Z 
+        self.pn_choice = charge 
       
     def change_form(self,):
         try: 
@@ -162,6 +166,18 @@ class DialogDFOLD_GUI(QDialog,form_omp):
                       'Isoscalar': None, 
                       'Isovector': None }   
         self.status = True                       
+        #---kinematics-------
+        self.lineEdit_zp.setText('{}'.format(zp))
+        self.lineEdit_np.setText('{}'.format(ap-zp))
+        self.lineEdit_zt.setText('{}'.format(zt))
+        self.lineEdit_nt.setText('{}'.format(at-zt))
+        self.lineEdit_elab.setText('{}'.format(e_a*ap))
+        self.lineEdit_zp.editingFinished.connect(lambda: self.update_kin(1))
+        self.lineEdit_np.editingFinished.connect(lambda: self.update_kin(2))
+        self.lineEdit_zt.editingFinished.connect(lambda: self.update_kin(3))
+        self.lineEdit_nt.editingFinished.connect(lambda: self.update_kin(4))
+        self.lineEdit_elab.editingFinished.connect(lambda: self.update_kin(0))
+        
         #--button action
         self.buttonBox.accepted.connect(self.take_data)
         self.buttonBox.rejected.connect(self.reject)
@@ -187,13 +203,13 @@ class DialogDFOLD_GUI(QDialog,form_omp):
         self.comboBox_potential.addItems(pot_list) 
         
         self.comboBox_proton_projectile_density = ChooseDensity(ap,zp,1)
-        self.gridLayout.addWidget( self.comboBox_proton_projectile_density,1,1)
         self.comboBox_neutron_projectile_density = ChooseDensity(ap,zp,0)
-        self.gridLayout.addWidget( self.comboBox_neutron_projectile_density,1,2)
         self.comboBox_proton_target_density = ChooseDensity(at,zt,1)
-        self.gridLayout.addWidget( self.comboBox_proton_target_density,1,3)
         self.comboBox_neutron_target_density = ChooseDensity(at,zt,0)
-        self.gridLayout.addWidget( self.comboBox_neutron_target_density,1,4)
+        self.gridLayout.addWidget( self.comboBox_proton_projectile_density,3,1)
+        self.gridLayout.addWidget( self.comboBox_neutron_projectile_density,3,2)
+        self.gridLayout.addWidget( self.comboBox_proton_target_density,3,3)
+        self.gridLayout.addWidget( self.comboBox_neutron_target_density,3,4)
                 
         self.comboBox_potential.currentIndexChanged.connect(self.pot_change) 
         self.pushButton.clicked.connect(self.update)  #<--compute !
@@ -203,7 +219,9 @@ class DialogDFOLD_GUI(QDialog,form_omp):
         self.toolbar = NavigationToolbar(self.canvas,
                 self.plot_Widget, coordinates =True)
         self.plot_layout.addWidget(self.toolbar)
-                
+        
+        self.pushButton_table.clicked.connect(self.print_table) 
+        
     def take_data(self,):
         # actions to store data and update parent window
         # self.DFpot stores the folding potential
@@ -222,6 +240,30 @@ class DialogDFOLD_GUI(QDialog,form_omp):
             self.comboBox_neutron_projectile_density.setEnabled(True)
             self.comboBox_proton_target_density.setEnabled(True)
             self.comboBox_neutron_target_density.setEnabled(True)
+    
+    def update_kin(self,index):
+        zp = int(self.lineEdit_zp.text())
+        ap = zp + int(self.lineEdit_np.text())
+        zt = int(self.lineEdit_zt.text())
+        at = zt + int(self.lineEdit_nt.text())
+        e_a= float(self.lineEdit_elab.text())/ap  
+        self.input= {'ap':ap,'at':at,'zp':zp,'zt':zt,'E/A':e_a }
+        
+        text = ' {}{} + {}{} at Elab={} MeV'.format(
+            ap,element_names[zp],at,element_names[zt],e_a*ap)
+        self.label_Main.setText(text)
+        #--density update 
+        if index in [1,2] : # zp change 
+            self.comboBox_proton_projectile_density.change_nuclei(ap,zp,1)
+            self.comboBox_proton_projectile_density.comboBox.setCurrentIndex(0)
+            self.comboBox_neutron_projectile_density.change_nuclei(ap,zp,0)
+            self.comboBox_neutron_projectile_density.comboBox.setCurrentIndex(0)
+        elif index in [3,4] :
+            self.comboBox_proton_target_density.change_nuclei(at,zt,1)
+            self.comboBox_proton_target_density.comboBox.setCurrentIndex(0)
+            self.comboBox_neutron_target_density.change_nuclei(at,zt,0)
+            self.comboBox_neutron_target_density.comboBox.setCurrentIndex(0)
+            
   
     def update(self,):
         # update info , densities and compute folding potential and plot 
@@ -229,6 +271,7 @@ class DialogDFOLD_GUI(QDialog,form_omp):
         self.rm_plot()
         self.label_status.setText('')
         
+        #--potential 
         pot_choice = self.comboBox_potential.currentText()
         #-------prepare density--------------------------
         if pot_choice in ['to_be_added']:
@@ -236,7 +279,7 @@ class DialogDFOLD_GUI(QDialog,form_omp):
             pass 
         else:     
             # prepare density       
-            den_sts=[0,0,0,0]
+            den_sts=[0,0,0,0] #status check 
             den_names=['prot.-proj.','neut.-proj.','prot.-targ.','neut.-targ.']
             (self.densities['proton-projectile'],den_sts[0]) = self.comboBox_proton_projectile_density.get_density()
             (self.densities['neutron-projectile'],den_sts[1])= self.comboBox_neutron_projectile_density.get_density()
@@ -301,6 +344,21 @@ class DialogDFOLD_GUI(QDialog,form_omp):
         self.canvas.close()
         self.plot_layout.removeWidget(self.toolbar)
         self.toolbar.close()
+        
+    def print_table(self,):
+        #---print folding potential  
+        options = QFileDialog.Options()
+        fileName, _filter = QFileDialog.getSaveFileName(self,
+                    "Save file",
+                    "",
+                    "All Files (*)",
+                    options=options)
+        np.savetxt(fileName,
+                   np.column_stack((self.DFpot['R'],self.DFpot['Isoscalar'])),
+                   fmt='%.8e',
+                   header='# R  U(R) ')
+        
+        
 #=============================================================================
 
 #===================================================================================================       
@@ -318,7 +376,7 @@ if __name__ == "__main__":
         ap=40;zp=20;at=80;zt=40;e_a=10.0; #default
         myWindow = DialogDFOLD_GUI(ap,zp,at,zt,e_a)
         myWindow.show()
-        # app.exec_() 
+        app.exec_() 
         return myWindow  
     m = run_app() 
     #sys.exit(app.exec_()) # when run in console

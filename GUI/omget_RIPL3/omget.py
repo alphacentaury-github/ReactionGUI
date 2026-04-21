@@ -45,10 +45,12 @@ def global_omp_choose(ap,zp,at,zt,elab):
     # [60:63] Ref.No.     [65:80] 1st Author
     ff = open(ompIndexFile,'r')
     lines = ff.readlines()
+    ff.close() 
     lines = list(map(lambda s: s.rstrip(), lines))
     omp_list=[]
+    omp_list_extended=[] 
     for line in lines:
-        if line[6:9] == name_Targ :
+        if line[6:9] == name_Targ :  # incident particle 
             if int(line[30:33]) <= zt <= int(line[34:37]) and int(line[38:41]) <= at <= int(line[42:45]) :
                 if float(line[47:51]) <= elab <= float(line[52:57]) :
 #                    if line[12:28] == 'spher.   no   no' :
@@ -56,7 +58,23 @@ def global_omp_choose(ap,zp,at,zt,elab):
     #                  until now, only spherical & no dirsper
  #                       omp_list.append((line[0:4],line[0:80]))
 #                        omp_list.append((line[0:4],line[6:9],line[30:33]))
-                        omp_list.append((int(line[0:4]),line[6:9],int(line[30:33]),int(line[34:37]),int(line[38:41]),int(line[42:45]),float(line[47:51]),float(line[52:57]),line[65:80]))
+                        omp_list.append((int(line[0:4]),line[6:9],int(line[30:33]),
+                                 int(line[34:37]),int(line[38:41]),int(line[42:45]),
+                                 float(line[47:51]),float(line[52:57]),line[65:80],
+                                 ''
+                                 ))
+    #----extrapolation-----
+    #  ztp = zt +2/-2 and atp = at +/- 10
+    #  do not check for energy range 
+            elif (int(line[30:33])-20 <= zt <= int(line[34:37])+20 
+                  and int(line[38:41])-20 <= at <= int(line[42:45])+20 ):
+                      if line[12:23] == 'spher.   no' :
+                          omp_list_extended.append((int(line[0:4]),line[6:9],int(line[30:33]),
+                                 int(line[34:37]),int(line[38:41]),int(line[42:45]),
+                                 float(line[47:51]),float(line[52:57]),line[65:80],
+                                 '!! out of valid range !!'
+                                 ))
+    omp_list = omp_list + omp_list_extended              
     return omp_list
 
 def global_omp_get(ap,zp,at,zt,elab,omp_id,omget_exe =here+"/omget.exe"):
@@ -64,7 +82,6 @@ def global_omp_get(ap,zp,at,zt,elab,omp_id,omget_exe =here+"/omget.exe"):
                 'rc': 0,
                 'V': [0,0,0], 'W': [0,0,0],
                 'Vso': [0,0,0], 'Wso':[0,0,0],
-#                'Vd': [0,0,0], 'Wd':[0,0,0] }
                 'Vd': [0,0,0], 'Wd':[0,0,0],
                 'desc':[]}#, 'desc2':'', 'desc3':'', 'desc4':'', 'desc5':'', 'desc6':''}
     try:
@@ -78,8 +95,7 @@ def global_omp_get(ap,zp,at,zt,elab,omp_id,omget_exe =here+"/omget.exe"):
     ff.write('%f\n' % elab)
     ff.write('%d %d %d -2\n' % (int(zt), int(at), int(omp_id)))
     ff.close()
-    #print(omget_exe)
-#
+
     descr_line = []
     gg = open(here+'/om-parameter-u.dat','r')
     gglines = gg.readlines()
@@ -130,4 +146,13 @@ def global_omp_get(ap,zp,at,zt,elab,omp_id,omget_exe =here+"/omget.exe"):
         print('No ecis.inp or Error while running omget')
         return 0 
 
-    
+#==============================================================
+if __name__ == '__main__':
+    ap =1;zp=1
+    at=40;zt=18;
+    elab=7.77
+    list_omp_id = global_omp_choose(ap,zp,at,zt,elab)
+    omp_index=0# 3 neutron 1 proton
+    print(list_omp_id[omp_index])
+    res_omp = global_omp_get(ap, zp, at, zt, elab, list_omp_id[omp_index][0])
+    print(res_omp)    

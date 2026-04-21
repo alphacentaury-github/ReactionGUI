@@ -131,9 +131,11 @@ class DialogOMP_GUI(QDialog,form_omp):
         self.listWidget.clear() 
         self.omp_list = global_omp_choose(ap,zp,at,zt,elab)
         if self.omp_list != []:
-            self.listWidget.addItem('proj.     Ztarg          Atarg                   Elab                  Author')
+            self.listWidget.addItem('proj.     Ztarg          Atarg                   Elab                  Author'
+                                    +'       comment')
             for i in self.omp_list:
-                om_info='{0:8}{1:3} - {2:3}     {3:3} - {4:3}     {5:8.3f} - {6:8.3f}     {7}'.format(i[1],i[2],i[3],i[4],i[5],i[6],i[7],i[8])
+                om_info='{0:8}{1:3} - {2:3}     {3:3} - {4:3}     {5:8.3f} - {6:8.3f}     {7:10}       {8}'.format(
+                    i[1],i[2],i[3],i[4],i[5],i[6],i[7],i[8],i[9])
                 self.listWidget.addItem(om_info)
             self.listWidget.setCurrentRow(1)
         else:
@@ -147,7 +149,8 @@ class DialogOMP_GUI(QDialog,form_omp):
         if self.temp_para == {} or self.temp_para==0:
             pass
         else :     
-            (omp_id,proj,ztmin,ztmanx,atmin,atmax,emin,emax,author)= self.omp_list[self.listWidget.currentRow()-1]
+            (omp_id,proj,ztmin,ztmanx,atmin,atmax,emin,emax,author,comment)= ( 
+                               self.omp_list[self.listWidget.currentRow()-1] )
             if proj == ' n ' and self.temp_para['rc'] == 0.0 :
                 self.temp_para['rc'] = 1.0
             else :
@@ -170,7 +173,7 @@ class DialogOMP_GUI(QDialog,form_omp):
         else:
             self.textBrowser.clear()
 #        (omp_id,omp_txt)= self.omp_list[self.listWidget.currentRow()]
-            (omp_id,proj,ztmin,ztmanx,atmin,atmax,emin,emax,author)= self.omp_list[self.listWidget.currentRow()-1]
+            (omp_id,proj,ztmin,ztmanx,atmin,atmax,emin,emax,author,extra)= self.omp_list[self.listWidget.currentRow()-1]
             #---------call global_omp_get
             self.temp_para = global_omp_get(self.input['ap'],
                             self.input['zp'],self.input['at'],self.input['zt'],
@@ -226,6 +229,7 @@ if __name__ == "__main__":
         ap=1;zp=1;at=63;zt=29;elab=30.0; #default
         myWindow = DialogOMP_GUI(ap,zp,at,zt,elab)
         myWindow.show()
+        sys.exit(app.exec_())
         # app.exec_()
         return myWindow
     m = run_app()

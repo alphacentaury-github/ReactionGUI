@@ -57,6 +57,7 @@ import numpy as np
 import myutil 
 import reactions
 import run_fresco_v2 
+import webbrowser
 
 class data_Dialog(QDialog, uic.loadUiType("dialog_data.ui")[0]):    
     def __init__(self,data=None,label_text=None):
@@ -119,6 +120,7 @@ class ExpDataDialog(QDialog,uic.loadUiType("dialog_exp_data.ui")[0]):
         
         self.buttonBox.accepted.connect(self.take_data)
         self.buttonBox.rejected.connect(self.reject_data)
+        self.pushButton_OpenEXFOR.clicked.connect(lambda: webbrowser.open('https://www-nds.iaea.org/exfor/'))
    
     def modify(self,data='',
                   label_text="Type of Data and Error",
@@ -227,14 +229,18 @@ class Elastic_Fit_Dialog(QDialog,uic.loadUiType("dialog_fit.ui")[0]):
         self.check_buttons = [self.checkBox_V0,self.checkBox_r0, self.checkBox_a0,
                               self.checkBox_W0,self.checkBox_rw,self.checkBox_aw,
                               self.checkBox_Wd,self.checkBox_rwd,self.checkBox_awd,
-                              self.checkBox_Vso,self.checkBox_rso,self.checkBox_aso
+                              self.checkBox_Vso,self.checkBox_rso,self.checkBox_aso,
+                              self.checkBox_DF_NR,self.checkBox_DF_NI,
+                              self.checkBox_DF_W0,self.checkBox_DF_rw,self.checkBox_DF_aw
                               ]
          # each one [kind,name,kp,pline, col]
          # Need a better way ... 
         self.check_buttons_associated = [ [1,'v0',1,2,1],[1,'r0',1,2,2],[1,'a0',1,2,3],
                                           [1,'w0',1,2,4],[1,'rw',1,2,5],[1,'aw',1,2,6],
                                           [1,'wd',1,3,4],[1,'rwd',1,3,5],[1,'awd',1,3,6],
-                                          [1,'vso',1,4,1],[1,'rso',1,4,2],[1,'rso',1,4,3]
+                                          [1,'vso',1,4,1],[1,'rso',1,4,2],[1,'rso',1,4,3],
+                                          [1,'NR',1,2,1],[1,'NI',1,2,2],
+                                          [1,'DFW0',1,3,4],[1,'DFrw',1,3,5],[1,'DFaw',1,3,6] # with folding pot
                                           ] 
         #---connect  
         self.pushButton.clicked.connect(self.update_and_run)
@@ -271,6 +277,7 @@ class Elastic_Fit_Dialog(QDialog,uic.loadUiType("dialog_fit.ui")[0]):
         min_fname = self.path_data['minunit_filename']
         fname_head = min_fname.split('.')[0]
         fit_result_filename = fname_head+'_fit.plot'
+        fit_init_filename = fname_head+'_init.plot'
         
         #----prepare file 
         if len(self.sfresco_input.search_var)==0: # nothing is checked
@@ -311,15 +318,19 @@ class Elastic_Fit_Dialog(QDialog,uic.loadUiType("dialog_fit.ui")[0]):
         except: 
             self.textBrowser.append('Something wrong while running Sfresco \n')
         #----read results of fitting 
+        init_txt= run_fresco_v2.read_sfresco_fit_txt(fit_init_filename)
+        fit_txt = run_fresco_v2.read_sfresco_fit_txt(fit_result_filename)
+        
+        # Show result.. 
+        self.textBrowser.append('==Finished SFresco fitting\n'
+                               +'==initial==\n'+init_txt+'\n'
+                               +'==fit==\n'+fit_txt+'\n')
+        
         # check result?? 
+        # get fitted parameter values 
         ff=open(fit_result_filename,'r')
         ll=ff.readlines()
         ff.close() 
-        
-        # Show result.. 
-        self.textBrowser.append('==Finished SFresco fitting\n')
-        
-        # get fitted parameter values 
         self.fit_result['para']=[]  
         self.fit_result['text']=''
         for i in range(len(self.sfresco_input.search_var) ):
@@ -367,6 +378,6 @@ if __name__ == "__main__":
         myWindow = data_Dialog()  
         #myWindow = ExpDataDialog() 
         myWindow.show()
-        # app.exec_()
+        app.exec_()
         return myWindow  
     m = run_app() 

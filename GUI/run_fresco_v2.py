@@ -47,6 +47,7 @@ import numpy as np
 import numpy.linalg as npla
 
 from subprocess import (call,Popen)
+import subprocess
 import myutil
 from myutil import read_fresco_res ,clean_comm
 
@@ -58,6 +59,91 @@ element_names = ["n","H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al",
 		 "Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No",
 		 "Lr","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og",
 		 "119","120","121","122","123","124","125","126","127","128","129","130"]
+
+def fresco_pot_val(r,TYPE=1,SHAPE=0,A1=1,A2=1,RC=1.25
+                   ,P1=0.0,P2=0.0,P3=0.0):
+    """ 
+    return potential value at r 
+    for given TYPE,SHAPE of FRESCO 
+    """
+    R = P2*(A1**(1./3)+A2**(1./3))
+    RH = (r-R)/P3
+    EE = np.exp(-RH)
+    if TYPE==0 and SHAPE==0:
+        pot_val = 1/r # screend coulomb !! 
+    elif TYPE in [1,8,15]:
+        if SHAPE== 0: #WS
+            pot_val = - P1/(1.+1./EE)
+        elif SHAPE== 1: #WS squared  
+            pot_val = - P1/(1.+1./EE)**2 
+        elif SHAPE== 2: #Gaussian 
+            pot_val = -P1*np.exp(-RH**2)
+        elif SHAPE==3 : #Yukawa 
+            pot_val = -P1*EE/r 
+        elif SHAPE==4 : 
+            pot_val == -P1*EE 
+        else:
+            raise ValueError(f'pot TYPE={TYPE} SHAPE={SHAPE} not available yet')
+    elif TYPE in [2]:
+        if SHAPE == 0: 
+            pot_val = -P1*4*EE/(1.+EE)**2
+        elif SHAPE==1:
+            pot_val = -P1*8*EE*EE/(1+EE)**3
+        elif SHAPE==2:
+            pot_val = -P1*2*np.exp(-RH*RH)*RH 
+        elif SHAPE== 3:
+            pot_val = -P1*EE*(1+r/P3)/(r*r)
+        elif SHAPE == 4:
+            pot_val = -P1*EE 
+        else: 
+            raise ValueError(f'pot TYPE={TYPE} SHAPE={SHAPE} not available yet')
+    elif TYPE in [3,4]:
+        CONLS = 2.0 
+        if SHAPE==0:
+            pot_val = -CONLS*P1*EE/((1+EE)**2*P3*r)
+        elif SHAPE==1:
+            pot_val = -CONLS*P1*EE*EE/(1+EE)**3/(2*r*P3)            
+        else:
+            raise ValueError(f'pot TYPE={TYPE} SHAPE={SHAPE} not available yet')
+    else:
+        raise ValueError(f'pot TYPE={TYPE} SHAPE={SHAPE} not available yet')
+    return pot_val 
+
+# def read_fresco_res(fname, to_array=True):
+#   """ read text files
+#       assume different data are separated by a blank line
+#       (and '#' '!' are used for commenting )
+      
+#       return dictionary of list of strings       
+#   """
+#   ff=open(fname,'r')
+#   lines=ff.readlines()
+#   ff.close()
+#   out={}
+#   j=0
+#   ll=[]
+#   for i in lines:
+#     w=i.split()
+#     if len(w)!=0 and (w[0][0] in ['#','!']):
+#       continue
+#     if len(w)!=0 :
+#       #--remove inline comments 
+#       temp =[] 
+#       for k in w:
+#           if ('#' in k) or ('!' in k):
+#               break 
+#           else:
+#               temp.append(float(k))
+#       ll.append(temp)         
+#     if len(w)==0 and len(ll)==0 : # continuos blank
+#       continue
+#     if (len(w)==0 and len(ll)!=0) or (i ==lines[-1]): #if met blank, it means end of data
+#       if to_array:
+#           ll=np.array(ll) 
+#       out[j]=ll[:]
+#       j=j+1
+#       ll=[]
+#   return out 
 
 #-----------------------------------------------------------------
 class Fresco_Head:
@@ -122,6 +208,10 @@ class Fresco_Head:
         self.data['RNL'] =10.0
         self.data['ITER'] =1
         self.data['IBLOCK']=0
+        self.data['TRENEG']=3
+        self.data['LAMPL']=1
+        self.data['WDISK']=1
+        self.data['BPM']=1 
 
     def set_items(self,**attributes):
         for item,value in attributes.items():
@@ -754,7 +844,7 @@ class Fresco_input():
     def example_inelastic_rotor(self,):
         self.head = Fresco_Head('alpha+12C->alpha+12C* @ 100 MeV; nuc deform')
         self.head.set_items(HCM=0.050, RMATCH=20.0,
-                            JTMIN=0.0, JTMAX=40.0,
+                            JTMIN=0.0, JTMAX=200.0,
                             THMIN=0.0, THMAX=180.0,THINC=1.0,
                             CHANS=1, SMATS=2,XSTABL=1,
                             ELAB = 100.0,
@@ -798,7 +888,7 @@ class Fresco_input():
         #------------------------------
         self.head = Fresco_Head('alpha+12C->alpha+12C* @ 100 MeV; double folding M3Y')
         self.head.set_items(HCM=0.050, RMATCH=20.0,
-                            JTMIN=0.0, JTMAX=40.0,
+                            JTMIN=0.0, JTMAX=200.0,
                             THMIN=0.0, THMAX=180.0,THINC=1.0,
                             CHANS=1, SMATS=2,XSTABL=1,
                             ELAB = 100.0,
@@ -962,17 +1052,17 @@ class SFresco_Input():
         self.search_var =[] 
 
 #=============================================================================
-def get_fresco_result():
+def get_fresco_result(fname='fort.16'):
     """ read fort.16 file results and return dictionary
     with arrays
     """
-    clean_comm('fort.16') #remove comments
-    out = read_fresco_res('fort.16x')
+    clean_comm(fname) #remove comments
+    out = read_fresco_res(fname+'x')
     for i in out:
         out[i] = np.array(out[i])
     return out
 
-def chck_fresco_out(fname=''):
+def chck_fresco_out(fname='',print_ok=False):
   """
     test whether the FRESCO ended normally
     return 0 if okay
@@ -1002,7 +1092,7 @@ def chck_fresco_out(fname=''):
     print('ERROR in %s file'%fname)
     return 1
   elif chck==2 :
-    print('ok')
+    if print_ok : print('ok')
     return 0
 
 def get_elastic_result_from_fresco_out(fname='_output.out'):
@@ -1042,12 +1132,228 @@ def get_elastic_result_from_fresco_out(fname='_output.out'):
                     #print(theta,mb,ratio)
             break #end of search 
     return np.array(elastic)
+#------------------------------------------------------------------------------
+def read_one_partial_wave(ff):
+    """
+    assume WDISK=1 and only one elastic channel.
+    # read a partial wave from Fresco output file object  
+    # input ff is a file object 
+    
+    wave function are given as 
+    (L,J,JTOT, r-array, re-wf-array, im-wf-array )
+    
+    This is called in read_fresco_elastic_wave
+    """
+    #------first line---------------
+    line=ff.readline()
+    if line=='':
+        return -1
+    words=line.split()
+    NR=int(words[0])
+    H=float(words[1])
+    ENLAB=float(words[2])
+    JTOTAL=float(words[3])
+    PARITY=int(words[4])
+    MP=float(words[5])
+    MT=float(words[6])
+    ZP=float(words[7])
+    ZT=float(words[8])
+    #----2nd line
+    line=ff.readline()
+    words=line.split()
+    IT=int(words[0])
+    L=int(words[1])      
+    J=float(words[2])
+    JTOT=float(words[3])
+    if np.abs(JTOT-JTOTAL)>0.001 :
+        raise ValueError()
+    LIN=int(words[4])
+    JIN=float(words[5])
+    SMAT=float(words[6])+1j*float(words[7]) 
+    ETA =float(words[8])
+    #---- wf
+    q_wf_read=True
+    wf=[]
+    while q_wf_read :
+        line=ff.readline()
+        words=line.split()
+        if words[0]=='-1':
+            q_wf_read=False
+        else: 
+            for ri in words:
+                wf.append(float(ri))
+    wf=np.array(wf)
+    wf_re = wf[::2]
+    wf_im = wf[1::2]
+    rr = np.arange(0.,H*NR,H)
+    out = (L,J,JTOT,rr,wf_re,wf_im)
+    return out
+
+def read_fresco_elastic_waves(file_name='fort.17'):
+    """
+    read Fresco output fort.17 for elastic scattering wave functions 
+     assume WDISK=1 and only one elastic channel.
+    """
+    ff=open(file_name,'r')
+    q_wf_read=True
+    waves ={}
+    m=0
+    while q_wf_read:
+        out=read_one_partial_wave(ff)
+        if out==-1:
+            q_wf_read=False
+            break
+        else:    
+            (L,J,JTOT,rr,wf_re,wf_im) =out
+            waves['r']=rr
+            waves[m]={}
+            waves[m]['ch'] = L,J,JTOT
+            waves[m]['wf_re']= wf_re
+            waves[m]['wf_im']= wf_im
+            m=m+1
+    ff.close()
+    return waves
+
+def read_fresco_smat(file_name='fort.7'):
+    """
+    read fort.7 file output of FRESCO
+    for (elastic) S-matrix
+
+    """
+    ff=open(file_name,'r')
+    lines=ff.readlines()
+    ff.close()
+    #----check Spin-------
+    Smats={'L':[],'J':[],'JT':[],'Smat':[]}
+    for line in lines:
+        words = line.split()
+        Smat = float(words[0])+1j*float(words[1])
+        L = int(words[2])
+        J = float(words[3])
+        JT =float(words[4])
+        two_S = int(2*J+1)-(2*L+1)
+        Smats['L'].append(L)
+        Smats['J'].append(J)
+        Smats['JT'].append(JT)
+        Smats['Smat'].append(Smat)            
+    Smats['Smat']=np.array(Smats['Smat'])    
+    return Smats
+
+def read_plot_fresco_potentials(file_name='fort.34',ZpZt=1):
+    """ 
+    Assume potentials are printed in fort.34 
+    by input option TRENEG >= 3
+    """
+    clean_comm(file_name)
+    pots = read_fresco_res(file_name+'x')
+    import matplotlib.pyplot as plt 
+    for key in pots.keys():
+        plt.figure() 
+        out = np.array(pots[key])
+        plt.plot(out[:,0],out[:,1],label=f'Re {key}' )
+        plt.plot(out[:,0],out[:,2],label=f'Im {key}' )
+        if (key==1):
+            Vc = np.array(pots[0]) 
+            Vv = np.array(pots[1])
+            Vb = np.max(Vc[:,1]*ZpZt+Vv[:,1])
+            plt.plot(Vc[:,0],Vc[:,1]*ZpZt+Vv[:,1],label=f'Re Vc+Vv, Vb={Vb} MeV')
+        plt.legend()
+        plt.xlabel('r')
+        plt.ylabel('MeV')
+        plt.show()    
+        plt.close() 
+    return pots
+
+
+def read_fresco_amp_A(file_name='fort.36'):
+    """
+    read file 36 of FRESCO output
+    for Amplitude A(m',M',m,M;L) 
+    For the moment,
+    spin-less particle scattering only.   
+    """
+    ff=open(file_name)
+    lines=ff.readlines()
+    ff.close()
+    amplitudes={'L':[],'amp':[]}
+    for line in lines[1:]:
+        words = line.split()
+        L = int(words[1])
+        amp = float(words[2])+1j*float(words[3])
+        amplitudes['L'].append(L)
+        amplitudes['amp'].append(amp)
+    amplitudes['amp'] = np.array(amplitudes['amp'])    
+    return amplitudes 
+
+def read_fresco_scamp(file_name='fort.37'):
+    """
+    read fort.37 file for f_{m'M',mM}(theta)
+    for the moment zero spin particles only. 
+    """
+    ff = open(file_name,'r')
+    heads = ff.readline() # m',M',m,M 
+    qread_f = True
+    angles=[]
+    sc_amp=[]
+    while qread_f:
+        line = ff.readline()
+        ww   = line.split() 
+        if line=='': #EOF 
+            qread_f=False
+            break
+        angles.append(float(ww[0]))
+        line = ff.readline()
+        ww   = line.split()
+        sc_amp.append( float(ww[0])+1j*float(ww[1])) 
+    ff.close()    
+    angles = np.array(angles)
+    sc_amp = np.array(sc_amp)
+    return angles, sc_amp   
+
+def read_fresco_totalXs(file_name='fort.13'):
+    """ 
+    read fort.13 for the reaction/total/elastic cross section 
+    in the form of 
+    
+    comment
+    reaction info 
+    partition info 
+    excitation-proj and target info, sigR sigTot sigEl
+    
+    Note 
+    (1) For the moment, only one-channel OMP case.
+    (2) total and elastic implies only 'Strong' interaction contribution 
+        sigma_el = sigma_{tot} - sigma_{R}
+    """
+    with open(file_name,'r') as ff:
+        ff.readline() ;ff.readline(); ff.readline()  # skip 3 lines 
+        txt  = ff.readline()
+        ww = txt.split()    
+        sigma_R = float(ww[6])
+        sigma_tot = float(ww[7])
+        sigma_el = float(ww[8])
+    return (sigma_R,sigma_tot,sigma_el)
+
+def read_sfresco_fit_txt(file_name='_test_fit.plot'):
+    #--read fit values and chisq 
+    ff=open(file_name,'r')
+    ll=ff.readlines() 
+    ff.close() 
+    fit_txt=''
+    for line in ll:
+        if ('Var' in line) or ('ChiSq' in line):
+            fit_txt += line
+        if '@' in line:
+            break 
+    #--read final values and chisq 
+    return fit_txt 
 
 #------------------------------------------------------------------------------
 def run_fresco_from_input_txt(fresco_input_txt,
                               fresco_path='fresco.exe',
                               fresco_input_path='_test.in',
-                              fresco_output_path='_test.out'):
+                              fresco_output_path='_test.out',
+                              verbose=True):
     """
     run fresco by using the fresco input text. 
     """
@@ -1056,13 +1362,18 @@ def run_fresco_from_input_txt(fresco_input_txt,
     fort_files = glob.glob('fort.*')    
     for i in fort_files:
         if not(i == 'fort.4'):
-            os.remove(i) 
+            try:
+                os.remove(i) 
+            except:
+                if verbose :
+                    print('Error removing {} file'.format(i))
     # remove previous input/ouputs
     try:
         os.remove(fresco_input_path)    
         os.remove(fresco_output_path)
     except:
-        print('Error removing tempoary files')
+        if verbose :
+            print('Error removing tempoary files')
     
     #----prepare input file and fort.4 file 
     ff= open(fresco_input_path,'w')
@@ -1070,7 +1381,9 @@ def run_fresco_from_input_txt(fresco_input_txt,
     ff.close() 
     
     proc = Popen(fresco_path +" < "+fresco_input_path
-                 +" > "+fresco_output_path,shell=True)
+                 +" > "+fresco_output_path,stdout=subprocess.PIPE
+                 ,shell=True)
+    (output, err) = proc.communicate()
     proc.wait() 
     proc.terminate() 
              
@@ -1081,6 +1394,33 @@ def run_fresco_from_input_txt(fresco_input_txt,
         print('There is an Error!!. Check input and output')
         return 
     
+def run_fresco_elastic_from_inputfile(fresco_input_path='_test.in',
+                       fresco_output_path='_test.out',
+                       fresco_path='fresco.exe'):
+    """
+    simply run fresco with input file then 
+    gather cross section 
+    """    
+    proc = Popen(fresco_path +" < "+fresco_input_path
+                 +" > "+fresco_output_path,stdout=subprocess.PIPE
+                 ,shell=True)
+    (output, err) = proc.communicate()
+    proc.wait() 
+    proc.terminate() 
+             
+    if chck_fresco_out(fname=fresco_output_path)==0:
+        # out = get_fresco_result()
+        out = get_elastic_result_from_fresco_out(fresco_output_path)
+        return out 
+    else: 
+        print('There is an Error!!. Check input and output')
+        return 
+#=============================================================
+if __name__ == '__main__' :
+     #--example run Fresco 
+     out = run_fresco_elastic_from_inputfile(fresco_input_path='_test.in',
+                            fresco_output_path='_test.out',
+                            fresco_path='fresco.exe')      
             
 
     
