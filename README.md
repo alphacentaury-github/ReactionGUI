@@ -65,7 +65,7 @@ are planned but not yet available.
    Solution: Check the path of executable of omget in the Configure menu
       
 ## Notice 
-    Copyright (c) 2020, All rights reserved.
+    Copyright (c) Young-Ho Song 2020, All rights reserved.
     
     ReactionGUI is free software: you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by
